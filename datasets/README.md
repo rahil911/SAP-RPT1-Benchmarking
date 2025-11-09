@@ -1,134 +1,114 @@
-# Benchmark Datasets Repository
+# Dataset Documentation
 
-**Purpose**: Storage and management for all benchmark datasets
-**Total Datasets**: 70+ (TabArena 51 + TabZilla 20 + OpenML subset)
-**Estimated Size**: 5-10GB
-**Owner**: Agent 4 (Infrastructure Engineer) or Research Agent
+**Benchmark Datasets for SAP RPT-1 Evaluation**
 
----
-
-## 📁 Folder Structure
-
-```
-datasets/
-├── README.md (this file)
-├── tabarena/ (51 datasets)
-├── tabzilla/ (20 subset)
-├── openml-cc18/ (15 subset, optional)
-└── metadata/
-    ├── dataset_catalog.csv
-    ├── dataset_statistics.json
-    └── download_log.txt
-```
+This directory contains documentation for datasets used in the SAP RPT-1 benchmarking study.
 
 ---
 
-## 📋 Dataset Sources
+## Dataset Sources
 
-### 1. TabArena (51 datasets) - PRIMARY
+### TabArena (51 datasets)
+**Description**: Living benchmark for tabular data with diverse real-world datasets
+**Coverage**: Classification and regression tasks across multiple domains
+**Characteristics**:
+- Small (< 1K rows), medium (1K-10K), large (> 10K) datasets
+- Various feature types (numerical, categorical, mixed)
+- Imbalanced and balanced class distributions
+- Missing value scenarios
 
-**Source**: OpenML API via TabArena
-**Website**: https://tabarena.ai
-**GitHub**: https://github.com/autogluon/tabarena
-**Type**: Living benchmark, curated real-world tasks
+**Domains**: Healthcare, finance, marketing, e-commerce, manufacturing, social science
 
-**Download Script** (in code/datasets/download_tabarena.py):
-```python
-import openml
-import pandas as pd
-
-TABARENA_TASK_IDS = [...]  # 51 task IDs from TabArena
-
-def download_tabarena_datasets(output_dir='datasets/tabarena'):
-    for task_id in TABARENA_TASK_IDS:
-        task = openml.tasks.get_task(task_id)
-        dataset = task.get_dataset()
-
-        X, y, categorical_indicator, attribute_names = dataset.get_data(
-            dataset_format="dataframe",
-            target=dataset.default_target_attribute
-        )
-
-        # Save
-        X.to_csv(f"{output_dir}/{dataset.name}_X.csv", index=False)
-        y.to_csv(f"{output_dir}/{dataset.name}_y.csv", index=False)
-
-        print(f"✅ Downloaded: {dataset.name}")
-```
+**Download**: See [../code/datasets/download_tabarena.py](../code/datasets/download_tabarena.py)
 
 ---
 
-### 2. TabZilla (20 hardest subset) - EXTENDED
+### TabZilla (20 datasets)
+**Description**: Curated subset of hardest tabular ML benchmarks
+**Coverage**: Challenging classification tasks
+**Selection Criteria**:
+- High complexity (many features, complex relationships)
+- Representative of real-world difficulty
+- Previously published in academic literature
 
-**Source**: GitHub repository
-**GitHub**: https://github.com/naszilla/tabzilla
-**Type**: "Hardest" datasets where simple baselines fail
+**Domains**: Bioinformatics, computer systems, physics, economics
 
-**Download**:
-```bash
-cd datasets/tabzilla
-git clone https://github.com/naszilla/tabzilla.git temp
-cp -r temp/data/* ./
-rm -rf temp
-```
+**Download**: See [../code/datasets/download_tabzilla.py](../code/datasets/download_tabzilla.py)
 
 ---
 
-### 3. OpenML-CC18 (15 subset, OPTIONAL)
+### OpenML-CC18 (Subset)
+**Description**: Standardized classification benchmark suite
+**Coverage**: 18 curated datasets for reproducible comparisons
+**Characteristics**:
+- Community-vetted data quality
+- Standardized train/test splits
+- Established baseline results
 
-**Source**: OpenML Benchmark Suite 99
-**Website**: https://www.openml.org/s/99
-**Type**: Curated classification benchmark
-
-**Download via API**:
-```python
-import openml
-
-suite = openml.study.get_suite('OpenML-CC18')
-for task_id in suite.tasks[:15]:  # Subset of 15
-    task = openml.tasks.get_task(task_id)
-    dataset = task.get_dataset()
-    # Download and save...
-```
+**Download**: Available via OpenML Python API
 
 ---
 
-## ✅ Download Checklist
+## Dataset Characteristics
 
-- [ ] TabArena 51 datasets downloaded
-- [ ] TabZilla 20 datasets downloaded
-- [ ] OpenML-CC18 subset downloaded (optional)
-- [ ] All datasets in CSV format
-- [ ] Metadata catalog created (dataset_catalog.csv)
-- [ ] Dataset statistics calculated
-- [ ] Download log generated
-- [ ] Total storage < 10GB
-- [ ] All datasets readable (no corruption)
+| Benchmark | Datasets | Task Types | Size Range | Domains |
+|-----------|----------|------------|------------|---------|
+| TabArena | 51 | Classification, Regression | 100 - 100K rows | 10+ domains |
+| TabZilla | 20 | Classification | 1K - 50K rows | 5+ domains |
+| OpenML-CC18 | 18 | Classification | 500 - 50K rows | Various |
+| **Total** | **89** | **Both** | **100 - 100K** | **15+** |
 
 ---
 
-## 📊 Dataset Metadata Tracking
+## Data Preprocessing
 
-### dataset_catalog.csv
+All datasets undergo standardized preprocessing:
+1. **Missing Value Handling**: Imputation or removal based on percentage
+2. **Feature Encoding**: Label encoding for categoricals, normalization for numericals
+3. **Train/Test Splits**: Stratified 80/20 or cross-validation
+4. **Standardization**: Zero mean, unit variance for numerical features
 
-| Dataset Name | Source | Task Type | Rows | Columns | Classes | Missing % |
-|--------------|--------|-----------|------|---------|---------|-----------|
-| adult | TabArena | Classification | 48842 | 14 | 2 | 0% |
-| ... | ... | ... | ... | ... | ... | ... |
-
-**Created by**: code/datasets/dataset_catalog.py
-
----
-
-## 🚨 Important Notes
-
-- **Storage**: Keep datasets in .gitignore (too large for Git)
-- **Caching**: Download once, use forever
-- **Preprocessing**: Minimal (model-specific in code/datasets/preprocessors.py)
-- **Validation**: Check file integrity after download
+**Implementation**: See [../code/datasets/preprocessors.py](../code/datasets/preprocessors.py)
 
 ---
 
-**Status**: ⏳ Download pending
-**Estimated Download Time**: 2-4 hours (depending on network)
-**Total Size**: 5-10GB
+## Dataset Catalog
+
+Complete dataset metadata available in:
+- [../code/datasets/dataset_catalog.py](../code/datasets/dataset_catalog.py)
+
+Includes:
+- Dataset name and source
+- Number of rows and columns
+- Task type (classification/regression)
+- Domain and application area
+- Missing value percentage
+- Class balance (for classification)
+
+---
+
+## Usage in Benchmarking
+
+Datasets are used to evaluate:
+- **Accuracy**: Predictive performance across diverse tasks
+- **Robustness**: Performance under varying data characteristics
+- **Efficiency**: Training time and compute requirements
+- **Generalization**: Cross-dataset transfer capabilities
+
+**Statistical Testing**: Friedman test with Nemenyi post-hoc analysis across all datasets
+
+---
+
+## Data Storage
+
+Datasets are **not stored in this repository** due to size constraints.
+
+**Download Instructions**:
+1. Navigate to [../code/](../code/)
+2. Run dataset download scripts
+3. Data will be stored in `code/results/` (gitignored)
+
+---
+
+**Prepared by**: University of Washington MSIM Team
+**Last Updated**: November 2025

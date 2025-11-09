@@ -213,3 +213,7 @@ Github/SAP-RPT1/deliverables/*.xlsx
 !Dockerfile*
 !LICENSE
 !README.md
+
+# Agent Documentation (Internal Only)
+**/AGENT_README.md
+AGENT_*.md

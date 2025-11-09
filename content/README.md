@@ -1,540 +1,174 @@
-# Content Files - Agent 1 (Content Generator)
+# Proposal Documentation
 
-**Agent**: Agent 1 - Content Generator (RAG-Powered)
-**Status**: ⏳ Awaiting Deployment
-**Dependencies**:
-- ✅ Research files complete (research/)
-- ✅ Stakeholder intelligence complete (stakeholders/)
-- ⏳ shared-data.json created by Research Agent
-**Execution Mode**: Sequential (MUST wait for shared-data.json)
+**Academic Capstone Proposal for SAP RPT-1 Benchmarking Study**
+
+This directory contains comprehensive proposal documentation prepared for SAP stakeholders and University of Washington faculty review.
 
 ---
 
-## 🎯 Agent 1 Mission
+## 📋 Document Overview
 
-Create **7 high-quality markdown content files** using RAG (Retrieval-Augmented Generation) from research artifacts and Knowledge Graph API. These files form the core narrative of the SAP RPT-1 benchmarking proposal.
+### Executive Materials
 
-**Quality Target**: BCG/McKinsey consulting-grade content (9.5/10)
-**Total Pages**: 40-50 pages across all files
-**Key Requirement**: 100% team data from Knowledge Graph API (NO fabrication)
+**[sap-executive-summary-v1.md](sap-executive-summary-v1.md)** (2 pages)
+- High-level project overview
+- Team qualifications and match scores
+- Expected outcomes and timeline
+- Budget considerations
+- **Audience**: SAP executives, UW program directors
 
----
+### Research Proposal
 
-## 📋 Required Deliverables (7 Files)
+**[sap-problem-statement-v1.md](sap-problem-statement-v1.md)** (7 pages)
+- Research gap and motivation
+- Current state of tabular ML benchmarking
+- Why independent validation is needed
+- Our proposed solution
+- **Audience**: SAP AI researchers, UW faculty advisors
 
-### 1. sap-executive-summary-v1.md
-**Target Length**: 2 pages
-**Purpose**: High-level overview for executives
+**[sap-methodology-v1.md](sap-methodology-v1.md)** (10 pages)
+- Detailed benchmarking methodology
+- Models: SAP RPT-1, TabPFN, TabICL, AutoGluon, baselines
+- Datasets: TabArena (51), TabZilla (20), OpenML-CC18
+- Statistical rigor: Friedman tests, Nemenyi post-hoc analysis
+- Reproducibility standards (REFORMS compliance)
+- **Audience**: Technical reviewers, data scientists, ML researchers
 
-**Required Sections**:
-- Project title and team
-- Problem statement (1 paragraph)
-- Solution approach (1 paragraph)
-- Team qualifications (1 paragraph with match scores)
-- Expected outcomes (1 paragraph)
-- Timeline (12 weeks, key milestones)
-- Budget (3 scenarios)
+**[sap-expected-outcomes-v1.md](sap-expected-outcomes-v1.md)** (7 pages)
+- Anticipated findings and insights
+- ROI for SAP (market credibility, competitive intelligence)
+- Academic impact (NeurIPS/ICML publication target)
+- Practical guidance for enterprises
+- **Audience**: SAP product managers, UW research committee
 
-**Content Sources**:
-- research/sap-company-intelligence.md
-- research/team-matching.md
-- project-requirements.json
-- shared-data.json (team data)
+### Project Planning
 
-**Quality Checks**:
-- [ ] BCG/McKinsey caliber writing
-- [ ] No jargon (executive-friendly)
-- [ ] Quantified claims (X datasets, Y% match scores)
-- [ ] 2 pages exactly
+**[sap-timeline-milestones-v1.md](sap-timeline-milestones-v1.md)** (7 pages)
+- 12-week project timeline with detailed breakdown
+- Phase-by-phase task list
+- Key milestones and deliverables
+- Resource allocation
+- **Audience**: Project managers, advisors, sponsors
 
----
+### Team Information
 
-### 2. sap-problem-statement-v1.md
-**Target Length**: 5-7 pages
-**Purpose**: Articulate research gap using SCR framework
+**[sap-team-presentation-v1.md](sap-team-presentation-v1.md)** (8 pages)
+- Detailed team member profiles
+- Educational background and work experience
+- Relevant skills and past achievements
+- Role assignments for this project
+- Match scores indicating expertise alignment (86-94%)
+- **Audience**: SAP hiring managers, UW faculty, potential collaborators
 
-**Required Sections**:
+### Engagement Strategy
 
-**SITUATION** (Current State):
-- SAP RPT-1 launched November 2025
-- Claims to be "first enterprise relational foundation model"
-- Promises zero-shot prediction on tabular data
-- Market context: $XB tabular AI market, X% CAGR
-
-**COMPLICATION** (The Problem):
-- No independent, comprehensive benchmarking exists
-- SAP's claims unvalidated by third parties
-- Unclear when RPT-1 excels vs. traditional ML
-- Enterprises lack evidence for adoption decisions
-- Academic community needs rigorous evaluation
-
-**RESOLUTION** (Our Solution):
-- UW MSIM team conducts publication-quality benchmarking
-- 70+ datasets, 7 models, statistical rigor
-- NeurIPS/ICML submission target
-- Provides SAP validation + practical guidance
-
-**Content Sources**:
-- research/sap-rpt-technical-deep-dive.md
-- research/tabular-ml-landscape.md
-- research/benchmarking-methodology.md
-- project-requirements.json (research questions)
-
-**Quality Checks**:
-- [ ] SCR framework applied correctly
-- [ ] Market sizing quantified with sources
-- [ ] Research questions clearly stated
-- [ ] Compelling narrative flow
+**[sap-stakeholder-strategy-v1.md](sap-stakeholder-strategy-v1.md)** (7 pages)
+- SAP organizational structure and key contacts
+- Engagement timeline and outreach plan
+- Value propositions tailored by stakeholder role
+- Collaboration opportunities
+- **Audience**: UW career services, team internal reference
 
 ---
 
-### 3. sap-methodology-v1.md
-**Target Length**: 8-12 pages
-**Purpose**: Detailed benchmarking methodology
+## 🎯 Navigation Guide by Stakeholder
 
-**Required Sections**:
+### For SAP Executives
+**Start with**: [sap-executive-summary-v1.md](sap-executive-summary-v1.md)
+- Quick 2-page overview of project value
+- Team credentials and timeline
+- Expected ROI and outcomes
 
-**Three-Pillar Approach**:
+**Then review**: [sap-expected-outcomes-v1.md](sap-expected-outcomes-v1.md)
+- Business impact and competitive insights
+- Market credibility benefits
 
-**Pillar 1: Models**
-- Foundation models: SAP RPT-1, TabPFN, TabICL
-- AutoML: AutoGluon
-- Baselines: CatBoost, XGBoost, LightGBM
-- Configurations for each (lightweight, standard, full)
+### For SAP Researchers & Data Scientists
+**Start with**: [sap-problem-statement-v1.md](sap-problem-statement-v1.md)
+- Research motivation and gap analysis
+- Why this benchmark is needed
 
-**Pillar 2: Datasets**
-- TabArena 51 datasets (living benchmark)
-- TabZilla 20 datasets (hardest subset)
-- OpenML-CC18 subset (optional)
-- Dataset characteristics and diversity
+**Then review**: [sap-methodology-v1.md](sap-methodology-v1.md)
+- Technical details of benchmarking approach
+- Models, datasets, statistical methods
+- Reproducibility standards
 
-**Pillar 3: Evaluation**
-- Metrics: ROC-AUC, Accuracy, F1, R², Runtime, Cost
-- Statistical rigor: Friedman test, Nemenyi post-hoc
-- Reproducibility: Docker, frozen environments
-- Publication standards: NeurIPS/ICML compliance
+**See code**: [../code/README.md](../code/README.md)
+- Production-ready benchmarking infrastructure
+- Docker configurations, model wrappers
 
-**Timeline Breakdown**:
-- Phase 0-5 with week-by-week tasks
-- Milestones and deliverables per phase
-
-**Content Sources**:
-- research/benchmarking-methodology.md
-- research/datasets-benchmarks.md
-- research/compute-resources-guide.md
-- project-requirements.json (experimental protocol)
-
-**Quality Checks**:
-- [ ] Three-pillar structure clear
-- [ ] Statistical protocols detailed
-- [ ] Reproducibility checklist included
-- [ ] Timeline realistic and detailed
-
----
-
-### 4. sap-team-presentation-v1.md (RAG-HEAVY)
-**Target Length**: 6-8 pages
-**Purpose**: Showcase team qualifications with 100% KG data
-
-**CRITICAL**: This file is **100% RAG-powered**. ALL team data MUST come from Knowledge Graph API. NO fabrication.
-
-**Required Sections**:
-
-**Team Overview**:
-- 4 UW MSIM students
-- 14+ combined years of experience
-- Fortune 500 backgrounds (SAP, AWS, Morgan Stanley, Rocket Mortgage)
-- Combined GPA: 3.88-3.9/4.0
-
-**Individual Profiles** (1.5 pages each):
-
-**Profile Template**:
-```markdown
-### [Name from KG] - [Title from KG]
-**Role**: [Role for this project]
-**Match Score**: [X]% (from team-matching.md)
-
-**Background**:
-- Education: [Degree, University, GPA from KG]
-- Experience: [X years from KG]
-- Past Companies: [Exact names from KG with roles]
-
-**Expertise Applied to This Project**:
-- [Skill 1 from KG]: [How it applies]
-- [Skill 2 from KG]: [How it applies]
-- [Skill 3 from KG]: [How it applies]
-
-**Key Achievements** (Quantified from KG):
-1. [Achievement 1 with metric: "35% reduction in..."]
-2. [Achievement 2 with metric: "$1M cost savings..."]
-3. [Achievement 3 with metric: "90% model accuracy..."]
-
-**Responsibilities for SAP RPT-1 Project**:
-- [Primary responsibility 1]
-- [Primary responsibility 2]
-- [Primary responsibility 3]
-```
-
-**Data Sources** (RAG Workflow):
-1. Query Knowledge Graph API: `/api/graph`
-2. Extract from `shared-data.json['team']`
-3. Validate against `research/team-matching.md`
-4. Cross-reference `research/kg-data-cache.json`
-
-**MANDATORY Team Member IDs** (from INTEGRATION_CONTRACT.md):
-- Rahil M. Harihar (exact spelling, match score: 94%)
-- Siddarth Bhave (exact spelling, match score: 92%)
-- Mathew Jerry Meleth (exact spelling, match score: 88%)
-- Shreyas B Subramanya (exact spelling, match score: 86%)
-
-**Quality Checks** (CRITICAL):
-- [ ] All names match KG exactly (spelling, middle initials)
-- [ ] Match scores from team-matching.md
-- [ ] All achievements have quantified metrics
-- [ ] Skills list matches KG API
-- [ ] Past companies exact names from KG
-- [ ] Education includes GPAs from KG
-- [ ] NO fabricated or hallucinated data
-- [ ] Every claim verifiable in KG
-
----
-
-### 5. sap-timeline-milestones-v1.md
-**Target Length**: 5-7 pages
-**Purpose**: Detailed 12-week timeline
-
-**Required Sections**:
-
-**Phase-by-Phase Breakdown**:
-
-**Phase 0: Research & Intelligence** (Weeks 1-2)
-- Tasks: [8 research tasks]
-- Deliverables: [Research files, stakeholder intelligence]
-- Milestone: Complete research foundation
-
-**Phase 1: Content Generation** (Week 3)
-- Tasks: [Agent 1 tasks]
-- Deliverables: [7 content files + Word docs]
-- Milestone: Content complete and validated
-
-**Phase 2: Visual & Interactive** (Week 3, Parallel)
-- Tasks: [Agent 2 & 3 tasks]
-- Deliverables: [21 visual assets, 5 interactive elements]
-- Milestone: All visuals and interactive complete
-
-**Phase 3: Code Repository** (Weeks 2-4)
-- Tasks: [Agent 4 tasks]
-- Deliverables: [Benchmarking codebase]
-- Milestone: Code repository ready
-
-**Phase 4: GitHub Projects** (Week 4)
-- Tasks: [Agent 5 tasks]
-- Deliverables: [150+ tasks, timeline export]
-- Milestone: Project management ready
-
-**Phase 5: Final Assembly** (Week 4)
-- Tasks: [Integration, validation, PPT, PDF]
-- Deliverables: [Final presentations]
-- Milestone: Proposal phase complete
-
-**Phases 6-12: Execution** (Weeks 5-12)
-- Brief overview of benchmarking execution
-- Analysis and paper writing timeline
-
-**Gantt Chart Format**:
-- Week-by-week breakdown
-- Dependencies clearly marked
-- Critical path highlighted
-
-**Content Sources**:
-- project-requirements.json (timeline object)
-- INTEGRATION_CONTRACT.md (agent coordination)
-- shared-data.json (team assignments)
-
-**Quality Checks**:
-- [ ] 12 weeks detailed
-- [ ] Dependencies noted
-- [ ] Milestones clear
-- [ ] Gantt-compatible format
-- [ ] Realistic estimates
-
----
-
-### 6. sap-expected-outcomes-v1.md
-**Target Length**: 5-7 pages
-**Purpose**: Define expected results and impact
-
-**Required Sections**:
-
-**Expected Findings**:
-- Where SAP RPT-1 will likely excel (semantic-rich datasets)
-- Where traditional ML may outperform (large datasets)
-- Efficiency trade-offs (runtime vs. accuracy)
+### For SAP Product Managers
+**Start with**: [sap-expected-outcomes-v1.md](sap-expected-outcomes-v1.md)
+- Competitive positioning insights
 - Use case recommendations
 
-**ROI for SAP**:
-- **Market Credibility**: Independent academic validation (value: $50K+ consulting equivalent)
-- **Competitive Intelligence**: How RPT-1 stacks up vs. TabPFN, TabICL
-- **Use Case Clarity**: Data-driven positioning guidance
-- **Feature Roadmap**: Optimization opportunities identified
-- **Publication Impact**: Citable research for sales/marketing
+**Then review**: [sap-team-presentation-v1.md](sap-team-presentation-v1.md)
+- Team expertise in product management
+- Past product development experience
 
-**Academic Impact**:
-- **Publication Venue**: NeurIPS 2026 or ICML 2026
-- **Contribution**: First comprehensive independent RPT-1 benchmark
-- **Citations**: Expected impact factor
-- **Reproducibility**: Open-source code benefits community
+### For SAP Hiring/Recruiting
+**Start with**: [sap-team-presentation-v1.md](sap-team-presentation-v1.md)
+- Detailed team member profiles
+- Skills, achievements, past companies
+- Match scores (86-94% alignment with project needs)
 
-**Practical Guidance for Enterprises**:
-- Decision framework: When to use RPT-1 vs. AutoML vs. traditional ML
-- Cost-benefit analysis by use case
-- Implementation considerations
+**Then review**: [sap-stakeholder-strategy-v1.md](sap-stakeholder-strategy-v1.md)
+- Collaboration and partnership opportunities
 
-**Long-Term Collaboration**:
-- Potential co-authorship with SAP researchers
-- Access to domain-specific datasets
-- Ongoing UW-SAP partnership
+### For UW Faculty Advisors
+**Start with**: [sap-problem-statement-v1.md](sap-problem-statement-v1.md)
+- Research significance and academic contribution
 
-**Content Sources**:
-- research/sap-rpt-technical-deep-dive.md (model capabilities)
-- research/tabular-ml-landscape.md (competitive positioning)
-- stakeholders/value-propositions-by-role.md (SAP value)
-- project-requirements.json (success criteria)
+**Then review**:
+- [sap-methodology-v1.md](sap-methodology-v1.md) - Research rigor
+- [sap-timeline-milestones-v1.md](sap-timeline-milestones-v1.md) - Project feasibility
+- [sap-expected-outcomes-v1.md](sap-expected-outcomes-v1.md) - Publication potential
 
-**Quality Checks**:
-- [ ] Expected findings realistic (not overpromising)
-- [ ] ROI quantified where possible
-- [ ] Academic impact clear
-- [ ] Practical guidance actionable
+### For UW Program Directors
+**Start with**: [sap-executive-summary-v1.md](sap-executive-summary-v1.md)
+- Program capstone quality demonstration
+
+**Then review**: [sap-team-presentation-v1.md](sap-team-presentation-v1.md)
+- Student capabilities and industry readiness
 
 ---
 
-### 7. sap-stakeholder-strategy-v1.md
-**Target Length**: 5-7 pages
-**Purpose**: Outreach strategy and stakeholder engagement
+## 📊 Supporting Materials
 
-**Required Sections**:
-
-**Key Stakeholders Identified**:
-- Tier 1: Walter Sun, Sam Thelin, Johannes Hoffart
-- Tier 2: Marco Spinaci, Markus Kohler, Maximilian Schambach
-- Tier 3: Additional contacts
-
-**Outreach Timeline**:
-- Week 3: Initial contact (Tier 1)
-- Week 4: Follow-up + Tier 2 expansion
-- Week 5: Informational interviews
-- Weeks 6-12: Ongoing engagement
-
-**Value Propositions by Role**:
-- Executive Leadership: Market credibility
-- Core Researchers: Citation and validation
-- Product Managers: Competitive intelligence
-- Academic Liaisons: University partnership
-
-**Engagement Strategy**:
-- Email templates overview
-- LinkedIn approach
-- Meeting agendas
-- Progress updates
-
-**Collaboration Opportunities**:
-- Data access (if applicable)
-- Technical guidance
-- Co-authorship potential
-- Long-term partnership
-
-**Content Sources**:
-- stakeholders/sap-organizational-structure.md
-- stakeholders/sap-rpt1-product-team.md
-- stakeholders/value-propositions-by-role.md
-- stakeholders/outreach-playbook.md
-
-**Quality Checks**:
-- [ ] Stakeholder mapping clear
-- [ ] Timeline realistic
-- [ ] Value propositions tailored
-- [ ] Professional tone maintained
+All proposals reference:
+- **Research foundations**: [../research/README.md](../research/README.md)
+- **Visual assets**: [../visuals/README.md](../visuals/README.md)
+- **Code infrastructure**: [../code/README.md](../code/README.md)
+- **Stakeholder intelligence**: [../stakeholders/README.md](../stakeholders/README.md)
+- **SAP research paper**: [../2506.10707v4.pdf](../2506.10707v4.pdf)
 
 ---
 
-## 🔄 RAG Workflow (MANDATORY)
+## 📄 Document Statistics
 
-### Step 1: Wait for Dependencies
+| Document | Length | Primary Audience |
+|----------|--------|------------------|
+| Executive Summary | 2 pages | Executives, Directors |
+| Problem Statement | 7 pages | Researchers, Faculty |
+| Methodology | 10 pages | Data Scientists, ML Engineers |
+| Team Presentation | 8 pages | Recruiters, Hiring Managers |
+| Timeline & Milestones | 7 pages | Project Managers, Advisors |
+| Expected Outcomes | 7 pages | Product Managers, Researchers |
+| Stakeholder Strategy | 7 pages | Team Internal |
 
-```python
-# Agent 1 MUST wait for shared-data.json
-import os, time, json
-
-def wait_for_shared_data(timeout=300):
-    start = time.time()
-    while not os.path.exists("shared-data.json"):
-        if time.time() - start > timeout:
-            raise TimeoutError("shared-data.json not found")
-        time.sleep(5)
-
-    # Validate JSON
-    with open("shared-data.json") as f:
-        data = json.load(f)
-
-    required_keys = ["team", "project", "research_highlights", "stakeholders"]
-    for key in required_keys:
-        if key not in data:
-            raise ValueError(f"Missing key: {key}")
-
-    return data
-```
-
-### Step 2: Query Knowledge Graph API
-
-```python
-import requests
-
-def fetch_team_data_from_kg():
-    """
-    Query Knowledge Graph API for fresh team data
-    """
-    KG_API_URL = "https://kg-student-backend.ambitiouswave-220155c4.eastus2.azurecontainerapps.io/api/graph"
-
-    try:
-        response = requests.get(KG_API_URL, timeout=10)
-        response.raise_for_status()
-        return response.json()
-    except Exception as e:
-        # Fallback to cache
-        print(f"KG API failed: {e}. Using cache.")
-        with open("research/kg-data-cache.json") as f:
-            return json.load(f)
-```
-
-### Step 3: Extract Team Context
-
-```python
-def extract_team_member_context(kg_data, member_id):
-    """
-    Extract specific member data for RAG
-    """
-    for member in kg_data['team']['members']:
-        if member['id'] == member_id:
-            return {
-                "name": member['name'],  # EXACT spelling
-                "title": member['title'],
-                "skills": member['core_skills'],
-                "achievements": member['key_achievements'],
-                "experience": member['years_of_experience'],
-                "past_companies": member['past_companies'],
-                "education": member['education']
-            }
-    raise ValueError(f"Member {member_id} not found in KG data")
-```
-
-### Step 4: Generate Content with RAG
-
-```python
-def generate_team_presentation():
-    """
-    Example RAG workflow for team presentation
-    """
-    # 1. Load data
-    shared_data = wait_for_shared_data()
-    kg_data = fetch_team_data_from_kg()
-
-    # 2. Extract context for each member
-    team_profiles = []
-    for member_id in ["member_1", "member_2", "member_3", "member_4"]:
-        context = extract_team_member_context(kg_data, member_id)
-        match_score = shared_data['team'][member_id]['match_score']
-
-        # 3. Generate profile using context
-        profile = f"""
-### {context['name']} - {context['title']}
-**Role**: {shared_data['team'][member_id]['role']}
-**Match Score**: {match_score}%
-
-**Background**:
-- Education: {context['education']}
-- Experience: {context['experience']} years
-- Past Companies: {', '.join(context['past_companies'])}
-
-**Expertise Applied**:
-{format_skills(context['skills'])}
-
-**Key Achievements**:
-{format_achievements(context['achievements'])}
-"""
-        team_profiles.append(profile)
-
-    return "\n\n".join(team_profiles)
-```
+**Total**: 48 pages of comprehensive proposal documentation
 
 ---
 
-## 📦 Output Deliverables
+## 🔗 Quick Links
 
-### Markdown Files (7 files in /content/)
-1. sap-executive-summary-v1.md
-2. sap-problem-statement-v1.md
-3. sap-methodology-v1.md
-4. sap-team-presentation-v1.md
-5. sap-timeline-milestones-v1.md
-6. sap-expected-outcomes-v1.md
-7. sap-stakeholder-strategy-v1.md
-
-### Word Documents (7 files in /content/DOCS/)
-Convert all markdown files to .docx using:
-- python-docx or pandoc
-- Apply design system (Helvetica Neue, colors)
-- Professional formatting
-
-### Validation Checklist
-
-Before completing, Agent 1 MUST verify:
-- [ ] All 7 markdown files created
-- [ ] All 7 Word documents created
-- [ ] File naming follows convention (sap-{type}-v1.{ext})
-- [ ] All team names match KG exactly
-- [ ] All achievements have quantified metrics
-- [ ] Design system colors referenced
-- [ ] No fabricated data
-- [ ] Cross-references valid
-- [ ] Total 40-50 pages achieved
-- [ ] BCG/McKinsey quality (9.5/10)
+- **Main Repository**: [../README.md](../README.md)
+- **Code Documentation**: [../code/README.md](../code/README.md)
+- **Visual Assets**: [../visuals/README.md](../visuals/README.md)
+- **Research Paper**: [../2506.10707v4.pdf](../2506.10707v4.pdf)
 
 ---
 
-## 🚨 Critical Success Factors
-
-### Must-Do
-- ✅ Wait for shared-data.json before starting
-- ✅ Query Knowledge Graph API for team data
-- ✅ Use EXACT team member names from KG
-- ✅ Include quantified metrics in all achievements
-- ✅ Apply SCR framework to problem statement
-- ✅ Three-pillar structure for methodology
-- ✅ Cross-reference research files extensively
-
-### Must-NOT-Do
-- ❌ Start before shared-data.json exists
-- ❌ Fabricate or hallucinate team data
-- ❌ Misspell team member names
-- ❌ Use vague achievements ("improved performance" vs. "35% improvement")
-- ❌ Skip Word document conversion
-- ❌ Violate file naming conventions
-
----
-
-## 📊 Quality Standards
-
-**Content Quality**: BCG/McKinsey caliber (9.5/10)
-**Data Accuracy**: 100% (all team data from KG API)
-**Citation Coverage**: 100% (all claims sourced)
-**Design Compliance**: 100% (colors, fonts, white space)
-**Total Pages**: 40-50 pages
-**Timeline**: Complete in 1 day (15-20 hours)
-
----
-
-**Status**: ⏳ Awaiting shared-data.json creation
-**Owner**: Agent 1 (Content Generator)
-**Next Step**: Research Agent creates shared-data.json → Agent 1 deploys
-**Downstream**: Agent 2 & Agent 3 wait for these content files
+**Prepared by**: University of Washington MSIM Team
+**Contact**: rahil911@uw.edu
+**Last Updated**: November 2025
