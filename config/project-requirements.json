@@ -1,0 +1,811 @@
+{
+  "project_metadata": {
+    "sponsor": "SAP",
+    "project_title": "Comprehensive Benchmarking of SAP RPT-1 Tabular Foundation Models",
+    "project_slug": "sap-rpt1-benchmarking",
+    "project_type": "Academic Research Study",
+    "timeline_weeks": 12,
+    "start_date": "2025-11-08",
+    "target_completion": "2026-01-31",
+    "primary_goal": "Publication at NeurIPS 2026 or ICML 2026",
+    "quality_standard": "BCG/McKinsey consulting-grade",
+    "rigor_multiplier": "100x Graphwise baseline"
+  },
+
+  "research_questions": [
+    "Does in-context learning on tabular data truly eliminate the need for model training across diverse business prediction tasks?",
+    "How does SAP RPT-1 performance compare to state-of-the-art alternatives across different metrics (accuracy, speed, resource usage)?",
+    "What are the boundary conditions - where does SAP RPT-1 excel versus fail?",
+    "Can a single pre-trained foundation model really replace hundreds of specialized ML models in enterprise settings?",
+    "How does performance scale with table size, complexity, and domain specificity?",
+    "What is the cost-effectiveness comparison between foundation models and traditional ML pipelines?"
+  ],
+
+  "models_to_benchmark": {
+    "foundation_models": [
+      {
+        "name": "SAP RPT-1-OSS (Small)",
+        "slug": "sap-rpt1-small",
+        "type": "tabular_foundation_model",
+        "parameters": "172M (16M trainable)",
+        "architecture": "Transformer with semantic embeddings",
+        "training_data": "T4 dataset (2.18M tables, real-world)",
+        "key_innovation": "Semantic understanding of column names and categorical values",
+        "github": "https://github.com/SAP-samples/sap-rpt-1-oss",
+        "paper": "ConTextTab (NeurIPS 2025)",
+        "configurations": ["lightweight", "standard", "full"],
+        "context_sizes": [2048, 4096, 8192],
+        "bagging_factors": [1, 4, 8]
+      },
+      {
+        "name": "SAP RPT-1-OSS (Large)",
+        "slug": "sap-rpt1-large",
+        "type": "tabular_foundation_model",
+        "parameters": "Larger variant",
+        "note": "If available and accessible"
+      },
+      {
+        "name": "TabPFN v2.5",
+        "slug": "tabpfn",
+        "type": "tabular_foundation_model",
+        "parameters": "Proprietary",
+        "architecture": "Prior-Fitted Network",
+        "training_data": "Real-world finetuned (original: synthetic)",
+        "key_innovation": "KV cache optimization, SHAP interpretability",
+        "github": "https://github.com/PriorLabs/TabPFN",
+        "paper": "Nature (January 2025)",
+        "dataset_limits": "50,000 rows",
+        "configurations": ["default", "with_kv_cache"],
+        "license": "Non-commercial (v2.5), Apache 2.0 (v2)"
+      },
+      {
+        "name": "TabICL",
+        "slug": "tabicl",
+        "type": "tabular_foundation_model",
+        "parameters": "~100M",
+        "architecture": "Two-stage: column-then-row attention",
+        "training_data": "Pretrained on up to 60K samples",
+        "key_innovation": "Memory-efficient, handles 500K samples, 1-10x faster than TabPFN",
+        "github": "https://github.com/soda-inria/tabicl",
+        "paper": "ICML 2025",
+        "configurations": ["lightweight", "default", "full"],
+        "n_estimators": [8, 32, 64]
+      }
+    ],
+
+    "automl_platforms": [
+      {
+        "name": "AutoGluon Tabular",
+        "slug": "autogluon",
+        "type": "ensemble_automl",
+        "approach": "Multi-layer stacking, tree methods + deep learning + foundation models",
+        "github": "https://github.com/autogluon/autogluon",
+        "presets": ["medium_quality", "good_quality", "best_quality"],
+        "foundation_model_support": "Native TabPFN integration (v1.4+)",
+        "time_budgets": [600, 3600, 14400]
+      }
+    ],
+
+    "traditional_baselines": [
+      {
+        "name": "CatBoost",
+        "slug": "catboost",
+        "type": "gradient_boosting",
+        "configurations": ["default", "tuned_hpo"],
+        "tuning": "Optuna with 100 trials",
+        "hyperparameters": ["learning_rate", "depth", "l2_leaf_reg", "iterations"]
+      },
+      {
+        "name": "XGBoost",
+        "slug": "xgboost",
+        "type": "gradient_boosting",
+        "configurations": ["default", "tuned_hpo"],
+        "tuning": "Optuna with 100 trials",
+        "hyperparameters": ["learning_rate", "max_depth", "min_child_weight", "subsample", "colsample_bytree"]
+      },
+      {
+        "name": "LightGBM",
+        "slug": "lightgbm",
+        "type": "gradient_boosting",
+        "configurations": ["default", "tuned_hpo"],
+        "tuning": "Optuna with 100 trials",
+        "hyperparameters": ["learning_rate", "num_leaves", "min_data_in_leaf", "feature_fraction"]
+      }
+    ],
+
+    "total_model_count": 10
+  },
+
+  "benchmark_suites": {
+    "tier1_core": {
+      "name": "TabArena",
+      "dataset_count": 51,
+      "description": "Living benchmark, continuously maintained, representative real-world tasks",
+      "source": "https://tabarena.ai",
+      "github": "https://github.com/autogluon/tabarena",
+      "year": 2025,
+      "priority": "CRITICAL",
+      "estimated_runtime_days": 3
+    },
+
+    "tier2_extended": {
+      "name": "TabZilla (Subset)",
+      "dataset_count": 20,
+      "description": "Hardest datasets from TabZilla's 36, excludes simple baseline winners",
+      "source": "https://github.com/naszilla/tabzilla",
+      "paper": "NeurIPS 2023 Datasets and Benchmarks",
+      "priority": "HIGH",
+      "estimated_runtime_days": 2
+    },
+
+    "tier3_optional": {
+      "name": "OpenML-CC18 (Subset)",
+      "dataset_count": 15,
+      "description": "Curated classification benchmark, 500-100K observations",
+      "source": "https://www.openml.org/s/99",
+      "priority": "OPTIONAL",
+      "estimated_runtime_days": 1
+    },
+
+    "tier4_custom": {
+      "name": "SAP Domain-Specific Datasets",
+      "dataset_count": "TBD",
+      "description": "Business datasets from SAP if available (with privacy/NDA)",
+      "priority": "OPTIONAL",
+      "estimated_runtime_days": "TBD"
+    },
+
+    "total_datasets_minimum": 71,
+    "total_datasets_target": 86
+  },
+
+  "evaluation_metrics": {
+    "classification": {
+      "primary": [
+        {
+          "name": "ROC-AUC",
+          "description": "Area under ROC curve",
+          "range": "0 to 1 (higher better)",
+          "use_case": "Balanced classes"
+        },
+        {
+          "name": "Accuracy",
+          "description": "(TP + TN) / Total",
+          "range": "0 to 1 (higher better)",
+          "use_case": "Balanced classes, simple interpretation"
+        },
+        {
+          "name": "F1 Score",
+          "description": "Harmonic mean of precision and recall",
+          "range": "0 to 1 (higher better)",
+          "use_case": "Imbalanced classes"
+        }
+      ],
+      "secondary": [
+        {
+          "name": "Precision",
+          "description": "TP / (TP + FP)",
+          "use_case": "False positives costly"
+        },
+        {
+          "name": "Recall",
+          "description": "TP / (TP + FN)",
+          "use_case": "False negatives costly"
+        },
+        {
+          "name": "PR-AUC",
+          "description": "Precision-Recall Area Under Curve",
+          "use_case": "Severely imbalanced datasets"
+        }
+      ]
+    },
+
+    "regression": {
+      "primary": [
+        {
+          "name": "R² (R-squared)",
+          "description": "Coefficient of determination",
+          "range": "-∞ to 1 (higher better, 1 = perfect)",
+          "use_case": "Proportion of variance explained"
+        },
+        {
+          "name": "RMSE",
+          "description": "Root Mean Squared Error",
+          "range": "0 to ∞ (lower better)",
+          "use_case": "Penalizes large errors"
+        }
+      ],
+      "secondary": [
+        {
+          "name": "MAE",
+          "description": "Mean Absolute Error",
+          "use_case": "More robust to outliers"
+        },
+        {
+          "name": "MAPE",
+          "description": "Mean Absolute Percentage Error",
+          "use_case": "Scale-independent comparison"
+        }
+      ]
+    },
+
+    "efficiency": [
+      {
+        "name": "Prediction Time",
+        "description": "Wall-clock time for inference",
+        "unit": "seconds",
+        "importance": "Critical for production deployment"
+      },
+      {
+        "name": "Training Time",
+        "description": "Time to fit model (for baselines)",
+        "unit": "seconds",
+        "importance": "Cost comparison"
+      },
+      {
+        "name": "GPU Memory",
+        "description": "Peak GPU memory usage",
+        "unit": "GB",
+        "importance": "Infrastructure requirements"
+      },
+      {
+        "name": "Cost per Prediction",
+        "description": "Dollar cost (compute + GPU time)",
+        "unit": "USD",
+        "importance": "TCO analysis"
+      }
+    ],
+
+    "statistical_rigor": [
+      {
+        "name": "Average Rank",
+        "description": "Mean rank across all datasets",
+        "calculation": "Friedman test",
+        "use": "Overall model comparison"
+      },
+      {
+        "name": "Win/Tie/Loss Matrix",
+        "description": "Pairwise comparisons",
+        "calculation": "Count wins/ties/losses per model pair",
+        "use": "Head-to-head analysis"
+      },
+      {
+        "name": "Critical Difference",
+        "description": "Statistical significance threshold",
+        "calculation": "Nemenyi post-hoc test",
+        "visualization": "Critical difference diagram",
+        "use": "Publication-quality reporting"
+      },
+      {
+        "name": "p-values",
+        "description": "Statistical significance",
+        "calculation": "Wilcoxon signed-rank test (pairwise)",
+        "threshold": "p < 0.05",
+        "correction": "Bonferroni or Holm"
+      }
+    ]
+  },
+
+  "experimental_protocol": {
+    "cross_validation": {
+      "strategy": "10-fold stratified CV",
+      "repetitions": 1,
+      "random_seeds": [42, 123, 456, 789, 1011],
+      "variance_reporting": "Mean ± std dev across folds"
+    },
+
+    "dataset_splits": {
+      "approach": "Fixed splits from benchmark repositories",
+      "train_val_test": "As defined by benchmark (usually train/test only with CV)",
+      "freeze": "Yes - no data leakage"
+    },
+
+    "preprocessing": {
+      "foundation_models": "None (automatic handling)",
+      "automl": "AutoGluon default preprocessing",
+      "baselines": "CatBoost/XGBoost default handling",
+      "missing_values": "Model-specific defaults",
+      "categorical_encoding": "Model-specific defaults",
+      "scaling": "Not required for tree methods or foundation models"
+    },
+
+    "hyperparameter_tuning": {
+      "foundation_models": "None (pretrained, zero-shot)",
+      "automl": "Built-in AutoML search",
+      "baselines_default": "Library defaults",
+      "baselines_tuned": "Optuna with 100 trials, 5-fold CV",
+      "search_space": "Standard ranges from literature",
+      "time_budget": "4 hours per dataset (tuned baselines)"
+    },
+
+    "reproducibility": {
+      "random_seed_control": "Fixed seeds for all stochastic components",
+      "environment": "Docker containers with frozen dependencies",
+      "hardware_specs": "Documented (GPU model, memory, CPU)",
+      "code_repository": "Public GitHub with MIT license",
+      "data_versioning": "Frozen dataset versions with checksums",
+      "experiment_logging": "MLflow or W&B for tracking"
+    },
+
+    "failure_handling": {
+      "timeout": "24 hours per dataset per model",
+      "out_of_memory": "Log and skip, document in results",
+      "crashes": "Log error, retry once, then skip",
+      "reporting": "Failure rates per model documented"
+    }
+  },
+
+  "compute_resources": {
+    "primary_infrastructure": {
+      "name": "UW Tillicum",
+      "gpu_type": "NVIDIA H200",
+      "gpu_memory": "141GB HBM3e",
+      "cost_per_hour": 0.90,
+      "advantages": [
+        "Superior to A100 (newer architecture)",
+        "Heavily subsidized for UW students",
+        "100 free demo hours",
+        "Pay-as-you-go flexibility"
+      ],
+      "access": "Demo account request via ServiceNow KB0036077",
+      "timeline": "1-2 weeks approval"
+    },
+
+    "cloud_credits": [
+      {
+        "provider": "AWS",
+        "program": "AWS Research Credits",
+        "award_amount_per_student": 5000,
+        "students_applying": 4,
+        "total_potential": 20000,
+        "timeline": "90-120 days",
+        "status": "APPLY IMMEDIATELY",
+        "contact": "aws-research-credit@amazon.com",
+        "url": "https://pages.awscloud.com/aws-cloud-credit-for-research.html"
+      },
+      {
+        "provider": "Azure",
+        "program": "Azure for Students",
+        "award_amount_per_student": 100,
+        "students_applying": 4,
+        "total_potential": 400,
+        "timeline": "Immediate (automated)",
+        "status": "APPLY IMMEDIATELY",
+        "url": "https://azure.microsoft.com/en-us/pricing/offers/ms-azr-0170p"
+      },
+      {
+        "provider": "UW",
+        "program": "Research Computing Club (Hyak)",
+        "cost": 0,
+        "gpu_type": "NVIDIA L40S (48GB)",
+        "timeline": "Same day (join via HuskyLink)",
+        "status": "JOIN IMMEDIATELY",
+        "contact": "hpcc@uw.edu"
+      }
+    ],
+
+    "budget_cloud_providers": [
+      {
+        "name": "Thunder Compute",
+        "gpu": "A100 80GB",
+        "cost_per_hour": 0.78,
+        "note": "Cheapest option, use if credits don't materialize"
+      },
+      {
+        "name": "Vast.ai",
+        "gpu": "A100 80GB",
+        "cost_per_hour_range": [1.27, 1.87],
+        "note": "Decentralized marketplace, variable availability"
+      },
+      {
+        "name": "RunPod",
+        "gpu": "A100 PCIe",
+        "cost_per_hour": 1.19,
+        "note": "Good balance of price and reliability"
+      }
+    ],
+
+    "budget_scenarios": {
+      "best_case": {
+        "description": "Credits approved, primarily UW Tillicum",
+        "total_cost": 500,
+        "compute_hours": "500-1000 GPU-hours"
+      },
+      "realistic": {
+        "description": "Partial credits, mixed Tillicum + cloud",
+        "total_cost": 2000,
+        "compute_hours": "1500-2500 GPU-hours"
+      },
+      "self_funded": {
+        "description": "No credits, budget providers",
+        "total_cost": 3000,
+        "compute_hours": "2000-3500 GPU-hours"
+      }
+    }
+  },
+
+  "deliverables": {
+    "research_artifacts": {
+      "count": 8,
+      "files": [
+        "sap-company-intelligence.md",
+        "sap-rpt-technical-deep-dive.md",
+        "tabular-ml-landscape.md",
+        "benchmarking-methodology.md",
+        "compute-resources-guide.md",
+        "datasets-benchmarks.md",
+        "team-matching.md",
+        "kg-data-cache.json"
+      ],
+      "total_pages_estimate": 150
+    },
+
+    "stakeholder_intelligence": {
+      "count": 6,
+      "files": [
+        "sap-organizational-structure.md",
+        "sap-rpt1-product-team.md",
+        "sap-research-team.md",
+        "sap-academic-liaisons.md",
+        "outreach-playbook.md",
+        "value-propositions-by-role.md"
+      ],
+      "total_pages_estimate": 60,
+      "min_contacts_identified": 8,
+      "note": "100x more exhaustive than Graphwise (which had none)"
+    },
+
+    "content_files": {
+      "count": 7,
+      "formats": ["markdown", "docx"],
+      "files": [
+        "sap-executive-summary-v1.md",
+        "sap-problem-statement-v1.md",
+        "sap-methodology-v1.md",
+        "sap-team-presentation-v1.md",
+        "sap-timeline-milestones-v1.md",
+        "sap-expected-outcomes-v1.md",
+        "sap-stakeholder-strategy-v1.md"
+      ],
+      "total_pages_estimate": 40
+    },
+
+    "visual_assets": {
+      "diagrams": 12,
+      "infographics": 4,
+      "charts": 4,
+      "architecture_diagrams": 1,
+      "total": 21
+    },
+
+    "interactive_elements": {
+      "qr_codes": 4,
+      "web_portal": 1,
+      "demos": "Optional (if applicable)",
+      "total": 5
+    },
+
+    "final_presentations": {
+      "powerpoint": {
+        "filename": "SAP_RPT1_Benchmarking_Proposal.pptx",
+        "slides": "35-45",
+        "quality": "BCG/McKinsey caliber",
+        "design_system": "Navy #1E3A8A, Slate #64748B, Teal #14B8A6"
+      },
+      "pdf_report": {
+        "filename": "SAP_RPT1_Benchmarking_Report.pdf",
+        "pages": "25-35",
+        "sections": [
+          "Executive Summary",
+          "Problem Statement",
+          "Literature Review",
+          "Methodology",
+          "Team Qualifications",
+          "Timeline & Milestones",
+          "Expected Outcomes",
+          "Stakeholder Strategy",
+          "Budget & Resources",
+          "Appendices"
+        ]
+      },
+      "technical_appendix": {
+        "filename": "SAP_RPT1_Technical_Appendix.pdf",
+        "pages": "30-40",
+        "sections": [
+          "Detailed Model Specifications",
+          "Dataset Catalog with Statistics",
+          "Statistical Testing Protocols",
+          "Reproducibility Checklist",
+          "Code Documentation",
+          "Compute Resource Specifications",
+          "Hyperparameter Configurations",
+          "References & Citations"
+        ]
+      }
+    },
+
+    "code_repository": {
+      "structure": "benchmarking/",
+      "components": [
+        "Docker configurations (5 environments)",
+        "Model wrappers (sklearn-compatible)",
+        "Dataset downloaders and preprocessors",
+        "Experiment runners with checkpointing",
+        "Evaluation metrics and CV protocols",
+        "Statistical analysis tools",
+        "Visualization generators",
+        "README with setup instructions"
+      ],
+      "license": "MIT",
+      "documentation": "Comprehensive (README + docstrings + examples)"
+    },
+
+    "github_projects": {
+      "weeks": 12,
+      "tasks_per_week": "10-25",
+      "total_tasks_estimate": 150,
+      "automation_scripts": [
+        "full_automated_setup.py",
+        "import_tasks_to_github.py",
+        "update_project_status.py"
+      ],
+      "timeline_export": "Excel with Gantt chart"
+    },
+
+    "total_file_count_estimate": 100
+  },
+
+  "timeline": {
+    "phase_0": {
+      "name": "Research & Intelligence",
+      "weeks": [1, 2],
+      "owner": "Research Agent",
+      "tasks": [
+        "SAP company & product intelligence",
+        "SAP RPT-1 technical deep-dive (PDF + GitHub)",
+        "Tabular ML competitive landscape",
+        "Benchmarking methodology & standards",
+        "Compute resources & cost analysis",
+        "Datasets & benchmarks catalog",
+        "Team matching & assignments",
+        "SAP stakeholder intelligence (NEW)",
+        "Create shared-data.json"
+      ],
+      "deliverables": "8 research files + 6 stakeholder files + shared-data.json",
+      "milestone": "Complete research foundation"
+    },
+
+    "phase_1": {
+      "name": "Content Generation",
+      "weeks": [3],
+      "owner": "Agent 1 (Content Generator)",
+      "dependencies": ["Phase 0 complete", "shared-data.json exists"],
+      "tasks": [
+        "Executive summary (2 pages)",
+        "Problem statement (SCR framework)",
+        "Methodology (three-pillar approach)",
+        "Team presentation (RAG-powered, 100% KG data)",
+        "Timeline & milestones (12 weeks)",
+        "Expected outcomes & impact",
+        "Stakeholder strategy (NEW)",
+        "Convert all to Word documents"
+      ],
+      "deliverables": "7 markdown files + 7 Word documents",
+      "milestone": "Content complete and validated"
+    },
+
+    "phase_2": {
+      "name": "Visual & Interactive Assets",
+      "weeks": [3],
+      "parallel_with": "Phase 1",
+      "owners": ["Agent 2 (Visual Designer)", "Agent 3 (Interactive Developer)"],
+      "dependencies": ["shared-data.json exists"],
+      "tasks": {
+        "agent_2": [
+          "Mermaid diagrams (6 diagrams)",
+          "Render SVGs",
+          "Infographics (4 infographics)",
+          "Charts (4 charts)",
+          "Architecture diagram"
+        ],
+        "agent_3": [
+          "QR codes (4 codes)",
+          "Web portal with team cards",
+          "Optional demos"
+        ]
+      },
+      "deliverables": "21 visual assets + 5 interactive elements",
+      "milestone": "All visuals and interactive elements complete"
+    },
+
+    "phase_3": {
+      "name": "Code Repository & Infrastructure",
+      "weeks": [2, 3, 4],
+      "owner": "Agent 4 (Infrastructure Engineer)",
+      "tasks": [
+        "Docker configurations (5 environments)",
+        "Model wrappers (7+ models)",
+        "Dataset downloaders",
+        "Experiment runners",
+        "Evaluation tools",
+        "Analysis scripts",
+        "Documentation"
+      ],
+      "deliverables": "Complete benchmarking codebase",
+      "milestone": "Code repository ready for execution"
+    },
+
+    "phase_4": {
+      "name": "GitHub Projects Setup",
+      "weeks": [4],
+      "owner": "Agent 5 (Project Manager)",
+      "tasks": [
+        "Task database creation (12 weeks × tasks)",
+        "GitHub automation scripts",
+        "Timeline Excel export",
+        "Issue creation and project board setup"
+      ],
+      "deliverables": "GitHub Projects with 150+ tasks",
+      "milestone": "Project management infrastructure ready"
+    },
+
+    "phase_5": {
+      "name": "Final Assembly & Delivery",
+      "weeks": [4],
+      "owner": "Integration Team",
+      "tasks": [
+        "Run validation scripts",
+        "Generate PowerPoint (35-45 slides)",
+        "Generate PDF report (25-35 pages)",
+        "Generate technical appendix (30-40 pages)",
+        "Create web viewer (HTML)",
+        "Quality review against checklist",
+        "Final delivery to sponsor"
+      ],
+      "deliverables": "3 final presentations + web viewer + validated deliverables manifest",
+      "milestone": "Proposal phase complete, ready for benchmarking execution"
+    },
+
+    "phase_6_onwards": {
+      "name": "Benchmarking Execution",
+      "weeks": [5, 6, 7, 8, 9, 10, 11, 12],
+      "description": "Actual execution of benchmarking experiments, analysis, and paper writing",
+      "note": "Separate from proposal phase, uses code repository and compute resources"
+    }
+  },
+
+  "team_assignments": {
+    "rahil_harihar": {
+      "id": "member_1",
+      "role": "Project Lead & AI/ML Strategy",
+      "match_score": 94,
+      "primary_responsibilities": [
+        "Overall project management",
+        "Stakeholder coordination",
+        "Model evaluation framework design",
+        "Business case and value proposition",
+        "Final presentation and deliverables",
+        "Publication writing (lead author)"
+      ],
+      "expertise_applied": [
+        "Product Management",
+        "AI/ML (LangChain, GPT-4, model evaluation)",
+        "Multi-Agent Systems",
+        "Consulting (15+ Fortune 500 clients)"
+      ]
+    },
+
+    "siddarth_bhave": {
+      "id": "member_2",
+      "role": "Technical Lead & Infrastructure",
+      "match_score": 92,
+      "primary_responsibilities": [
+        "Benchmarking infrastructure setup",
+        "Model integration and API development",
+        "Performance profiling and optimization",
+        "Reproducibility engineering",
+        "Docker and cloud deployment",
+        "Publication writing (technical sections)"
+      ],
+      "expertise_applied": [
+        "AI/ML Engineering (LangChain, CrewAI, RAG, PyTorch)",
+        "Backend Systems (Spring Boot, Django, Kafka)",
+        "AWS (DynamoDB internship)",
+        "DevOps/SRE"
+      ]
+    },
+
+    "mathew_jerry_meleth": {
+      "id": "member_3",
+      "role": "Data & Cloud Engineering",
+      "match_score": 88,
+      "primary_responsibilities": [
+        "Benchmark dataset preparation",
+        "Cloud infrastructure (AWS/Azure/UW Tillicum)",
+        "Distributed computing for large-scale evaluations",
+        "Data pipelines and preprocessing",
+        "ETL/ELT for benchmark data",
+        "Cost tracking and optimization"
+      ],
+      "expertise_applied": [
+        "Cloud Platforms (AWS Lambda, S3, Glue, Azure Databricks)",
+        "Big Data (Hadoop, PySpark, Spark SQL)",
+        "Databases (MongoDB, MySQL, Cassandra)",
+        "Data Engineering (35% ingestion time reduction)"
+      ]
+    },
+
+    "shreyas_b_subramanya": {
+      "id": "member_4",
+      "role": "Analytics & Insights",
+      "match_score": 86,
+      "primary_responsibilities": [
+        "Statistical analysis and significance testing",
+        "Results dashboards (Power BI, Tableau)",
+        "Comparative analysis frameworks",
+        "Documentation and knowledge transfer",
+        "Training materials creation",
+        "Performance benchmarking visualization"
+      ],
+      "expertise_applied": [
+        "Analytics (Power BI, Tableau, Pandas, Excel)",
+        "Operations Optimization (70% batch-run time reduction)",
+        "Process Improvement",
+        "Training (500+ individuals certified)"
+      ]
+    }
+  },
+
+  "success_criteria": {
+    "quality_target": "9.5/10 (BCG/McKinsey standard)",
+    "data_accuracy": "100% (all team data from KG API, RAG-verified)",
+    "citation_coverage": "100% (all claims sourced)",
+    "design_system_compliance": "100% (exact hex codes)",
+    "stakeholder_completeness": "8+ key contacts identified with complete profiles",
+    "academic_rigor": "Publication-ready for NeurIPS/ICML",
+    "code_reproducibility": "100% (Docker + frozen environments)",
+    "deliverable_completeness": "100% (all files in manifest)",
+    "rigor_vs_graphwise": "100x more exhaustive"
+  },
+
+  "risk_mitigation": {
+    "sap_rpt1_model_access": {
+      "risk": "Hugging Face license approval delay",
+      "mitigation": "Apply immediately, have TabPFN/TabICL fallback",
+      "likelihood": "Low"
+    },
+    "gpu_availability": {
+      "risk": "Limited A100/H200 availability",
+      "mitigation": "Multi-provider strategy, spot instances, A10 fallback",
+      "likelihood": "Medium"
+    },
+    "framework_compatibility": {
+      "risk": "Python version conflicts (3.10 vs 3.11)",
+      "mitigation": "Docker containers per model, orchestration layer",
+      "likelihood": "Medium-High"
+    },
+    "credit_approval_delays": {
+      "risk": "AWS credits take 90-120 days",
+      "mitigation": "Apply immediately, use UW Tillicum while waiting",
+      "likelihood": "High (timeline, not failure)"
+    },
+    "dataset_download_failures": {
+      "risk": "OpenML API rate limits or downtime",
+      "mitigation": "Retry logic, mirrors, pre-download during setup",
+      "likelihood": "Low-Medium"
+    }
+  },
+
+  "notes": [
+    "This project is 100x more rigorous and exhaustive than the Graphwise pilot",
+    "Stakeholder intelligence is a completely new dimension (Graphwise had none)",
+    "Academic publication standards (NeurIPS/ICML) are mandatory",
+    "All team data MUST come from Knowledge Graph API (RAG-verified)",
+    "Design system compliance is strict (exact hex codes, fonts, white space)",
+    "Reproducibility is critical (Docker, frozen environments, public code)",
+    "Compute resource strategy leverages UW subsidized resources + cloud credits",
+    "Timeline is aggressive but achievable with parallel sub-agent execution",
+    "Quality gates must pass before final assembly (validation scripts)",
+    "This is a capstone-quality, publication-ready research study"
+  ]
+}

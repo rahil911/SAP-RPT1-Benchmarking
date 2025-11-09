@@ -1,0 +1,46 @@
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#1E3A8A',
+    'primaryTextColor': '#F8FAFC',
+    'primaryBorderColor': '#64748B',
+    'lineColor': '#14B8A6',
+    'secondaryColor': '#64748B',
+    'tertiaryColor': '#F8FAFC',
+    'fontSize': '14px',
+    'fontFamily': 'Helvetica Neue, Arial, sans-serif'
+  }
+}}%%
+
+graph LR
+    A[SAP RPT-1 Benchmarking<br/>Methodology]
+
+    A --> B[Pillar 1:<br/>Comprehensive Models]
+    A --> C[Pillar 2:<br/>Diverse Datasets]
+    A --> D[Pillar 3:<br/>Statistical Rigor]
+
+    B --> B1[Foundation Models<br/>SAP RPT-1, TabPFN v2.5, TabICL]
+    B --> B2[AutoML Platform<br/>AutoGluon Tabular]
+    B --> B3[Traditional Baselines<br/>XGBoost, CatBoost, LightGBM]
+
+    C --> C1[TabArena<br/>51 datasets]
+    C --> C2[TabZilla<br/>20 datasets]
+    C --> C3[Coverage<br/>7 industry domains]
+
+    D --> D1[Performance Metrics<br/>ROC-AUC, Accuracy, F1, Log Loss]
+    D --> D2[Efficiency Metrics<br/>Training Time, Inference Time, Cost]
+    D --> D3[Statistical Tests<br/>Friedman, Nemenyi, Wilcoxon]
+
+    style A fill:#1E3A8A,stroke:#64748B,color:#F8FAFC,stroke-width:3px
+    style B fill:#14B8A6,stroke:#1E3A8A,color:#1F2937,stroke-width:2px
+    style C fill:#14B8A6,stroke:#1E3A8A,color:#1F2937,stroke-width:2px
+    style D fill:#14B8A6,stroke:#1E3A8A,color:#1F2937,stroke-width:2px
+    style B1 fill:#64748B,stroke:#1E3A8A,color:#F8FAFC
+    style B2 fill:#64748B,stroke:#1E3A8A,color:#F8FAFC
+    style B3 fill:#64748B,stroke:#1E3A8A,color:#F8FAFC
+    style C1 fill:#64748B,stroke:#1E3A8A,color:#F8FAFC
+    style C2 fill:#64748B,stroke:#1E3A8A,color:#F8FAFC
+    style C3 fill:#64748B,stroke:#1E3A8A,color:#F8FAFC
+    style D1 fill:#64748B,stroke:#1E3A8A,color:#F8FAFC
+    style D2 fill:#64748B,stroke:#1E3A8A,color:#F8FAFC
+    style D3 fill:#64748B,stroke:#1E3A8A,color:#F8FAFC

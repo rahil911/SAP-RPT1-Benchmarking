@@ -1,0 +1,60 @@
+# Experiment Configuration
+# ========================
+
+# Cross-Validation Settings
+n_folds: 10
+random_state: 42
+timeout: 86400  # 24 hours per experiment
+
+# Compute Resources
+cost_per_hour: 0.90  # USD per GPU-hour (H200)
+gpu_type: 'H200'
+gpu_memory_limit: 80  # GB
+checkpoint_interval: 3600  # Save checkpoint every hour
+
+# Model-Specific Parameters
+model_params:
+  sap_rpt1:
+    context_size: 4096
+    bagging_factor: 4
+    model_size: 'small'  # or 'large'
+
+  tabpfn:
+    n_ensemble: 1
+    device: 'auto'
+
+  autogluon:
+    time_limit: 300  # 5 minutes
+    preset: 'medium_quality'  # best_quality, high_quality, good_quality, medium_quality
+
+  xgboost:
+    n_estimators: 100
+    learning_rate: 0.1
+    max_depth: 6
+
+  catboost:
+    iterations: 100
+    learning_rate: 0.1
+    depth: 6
+
+  lightgbm:
+    n_estimators: 100
+    learning_rate: 0.1
+    max_depth: -1
+
+# Evaluation Metrics
+primary_metric:
+  classification: 'roc_auc'
+  regression: 'r2'
+
+# Statistical Testing
+statistical_tests:
+  friedman_alpha: 0.05
+  nemenyi_alpha: 0.05
+
+# Reproducibility
+reproducibility:
+  save_predictions: true
+  save_models: false  # Models can be large
+  log_hyperparameters: true
+  track_compute: true

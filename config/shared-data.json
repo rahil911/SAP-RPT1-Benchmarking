@@ -1,0 +1,898 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created_at": "2025-11-08T00:00:00Z",
+    "created_by": "Research Agent",
+    "kg_api_queried_at": "2025-11-08T00:00:00Z",
+    "kg_api_url": "https://kg-student-backend.ambitiouswave-220155c4.eastus2.azurecontainerapps.io",
+    "kg_api_status": "success"
+  },
+
+  "team": {
+    "total_members": 4,
+    "institution": "University of Washington",
+    "program": "Master of Science in Information Management",
+    "members": [
+      {
+        "id": "member_1",
+        "name": "Rahil M. Harihar",
+        "title": "Product Lead & Development Consultant",
+        "experience_years": 3,
+        "match_score": 94,
+        "primary_role": "Project Lead & AI/ML Product Strategy",
+        "core_skills": [
+          "Product Management",
+          "Go-To-Market",
+          "User/Market Research",
+          "Product Roadmap",
+          "PRDs",
+          "OKRs",
+          "Risk Identification",
+          "Agile/Scrum",
+          "Product Strategy",
+          "Stakeholder Management",
+          "LangChain",
+          "CrewAI",
+          "OpenAI SWARM",
+          "GPT-4",
+          "ML Models",
+          "Python",
+          "Flask",
+          "FastAPI",
+          "SAP CPI",
+          "S4HANA"
+        ],
+        "key_achievements": [
+          {
+            "description": "Founded AaMaRa Technologies (bootstrapped startup)",
+            "metric": "₹3M ($36K) profit"
+          },
+          {
+            "description": "ML model accuracy for enterprise forecasting",
+            "metric": "90% accuracy"
+          },
+          {
+            "description": "Cycle time reduction in ML pipeline",
+            "metric": "48 hours → minutes (99%+ reduction)"
+          },
+          {
+            "description": "Real-time ML inference performance",
+            "metric": "Sub-200ms forecast delivery"
+          },
+          {
+            "description": "HR efficiency improvement at SAP",
+            "metric": "30% improvement"
+          },
+          {
+            "description": "SAP CPI integrations deployed",
+            "metric": "100+ integrations"
+          },
+          {
+            "description": "Latency reduction in data pipelines",
+            "metric": "30% reduction"
+          },
+          {
+            "description": "Fortune 500 client consulting",
+            "metric": "15+ clients"
+          },
+          {
+            "description": "Budget management at SAP",
+            "metric": "$60,000 managed"
+          }
+        ],
+        "past_companies": [
+          "AaMaRa Technologies (Founder)",
+          "SAP India Pvt. Ltd.",
+          "Allan Frank Apprenticeship"
+        ],
+        "expertise_areas": [
+          "Product Management",
+          "AI/ML Product Strategy",
+          "Stakeholder Management",
+          "Enterprise Integration",
+          "Multi-Agent Systems"
+        ],
+        "recommended_for": [
+          "Overall project leadership",
+          "SAP stakeholder engagement",
+          "Model evaluation framework design",
+          "Executive presentations",
+          "AI/ML strategy",
+          "Budget allocation"
+        ],
+        "gpa": 3.9
+      },
+      {
+        "id": "member_2",
+        "name": "Siddarth Bhave",
+        "title": "Software Development Engineer",
+        "experience_years": 3.5,
+        "match_score": 92,
+        "primary_role": "Technical Lead & AI/ML Infrastructure Engineer",
+        "core_skills": [
+          "ETL Pipeline Development",
+          "Python",
+          "Java",
+          "C++",
+          "LLMs",
+          "Prompt Engineering",
+          "Multi-Agent Systems",
+          "RAG",
+          "LangChain",
+          "CrewAI",
+          "Hugging Face",
+          "PyTorch",
+          "AWS",
+          "Kubernetes",
+          "Docker",
+          "Backend Development"
+        ],
+        "key_achievements": [
+          {
+            "description": "Co-founded AaMaRa Technologies with Rahil",
+            "metric": "₹3M profit bootstrapped"
+          },
+          {
+            "description": "Annual cost savings through network monitoring at AWS",
+            "metric": "$1M savings"
+          },
+          {
+            "description": "Metric retention increase at AWS",
+            "metric": "50% increase"
+          },
+          {
+            "description": "Query time reduction at Morgan Stanley",
+            "metric": "5 min → 45 sec"
+          },
+          {
+            "description": "Kafka ETL throughput at Morgan Stanley",
+            "metric": "75M records/minute"
+          },
+          {
+            "description": "IEEE Best Paper Award recognition",
+            "metric": "1x conference award"
+          }
+        ],
+        "past_companies": [
+          "AWS (DynamoDB intern)",
+          "Morgan Stanley (SDE 2)",
+          "AaMaRa Technologies (Co-founder)"
+        ],
+        "expertise_areas": [
+          "Software Engineering",
+          "AI/ML Infrastructure",
+          "Backend Systems",
+          "Performance Optimization",
+          "DevOps/SRE"
+        ],
+        "recommended_for": [
+          "Benchmarking code architecture",
+          "Model wrapper development",
+          "Docker environment setup",
+          "Performance optimization",
+          "AI/ML engineering"
+        ],
+        "gpa": 3.69
+      },
+      {
+        "id": "member_3",
+        "name": "Mathew Jerry Meleth",
+        "title": "Cloud & Data Engineer",
+        "experience_years": 3,
+        "match_score": 88,
+        "primary_role": "Data Engineering & Cloud Infrastructure Lead",
+        "core_skills": [
+          "AWS",
+          "Azure",
+          "Big Data",
+          "PySpark",
+          "Hadoop",
+          "ETL/ELT",
+          "MongoDB",
+          "MySQL",
+          "Cassandra",
+          "Python",
+          "Java",
+          "SQL"
+        ],
+        "key_achievements": [
+          {
+            "description": "Data ingestion time reduction",
+            "metric": "35% reduction"
+          },
+          {
+            "description": "Deployment efficiency improvement",
+            "metric": "40% improvement"
+          },
+          {
+            "description": "Processing time reduction",
+            "metric": "1 month → 2 days"
+          }
+        ],
+        "past_companies": [
+          "Rocket Mortgage",
+          "Mu Sigma",
+          "Adobe"
+        ],
+        "expertise_areas": [
+          "Cloud Infrastructure",
+          "Data Engineering",
+          "Big Data Processing",
+          "ETL/ELT Development"
+        ],
+        "recommended_for": [
+          "Dataset download and management",
+          "Cloud infrastructure setup",
+          "Data pipeline development",
+          "Big data processing"
+        ]
+      },
+      {
+        "id": "member_4",
+        "name": "Shreyas B Subramanya",
+        "title": "Senior Product Management Intern",
+        "experience_years": 4.5,
+        "match_score": 86,
+        "primary_role": "Operations & Analytics Lead",
+        "core_skills": [
+          "Product Management",
+          "Analytics",
+          "Power BI",
+          "Tableau",
+          "Pandas",
+          "Excel",
+          "Data Engineering",
+          "Delta Lake",
+          "ETL/ELT"
+        ],
+        "key_achievements": [
+          {
+            "description": "Batch-run time reduction",
+            "metric": "70% reduction"
+          },
+          {
+            "description": "Issue resolution time reduction",
+            "metric": "35% reduction"
+          },
+          {
+            "description": "Global implementations managed across regions",
+            "metric": "20x implementations"
+          },
+          {
+            "description": "Training content created for certification",
+            "metric": "500x individuals trained"
+          }
+        ],
+        "past_companies": [
+          "o9 Solutions (Supply Chain PM)",
+          "Indian Institute of Science"
+        ],
+        "expertise_areas": [
+          "Operations",
+          "Analytics",
+          "Process Optimization",
+          "Training & Documentation"
+        ],
+        "recommended_for": [
+          "Analytics and dashboards",
+          "Operations optimization",
+          "Stakeholder management",
+          "Training and documentation"
+        ],
+        "gpa": 3.88
+      }
+    ],
+    "team_assignments": {
+      "product_lead": "Rahil M. Harihar",
+      "technical_lead": "Siddarth Bhave",
+      "research_lead": "Rahil M. Harihar",
+      "operations_lead": "Shreyas B Subramanya"
+    },
+    "team_relationships": [
+      {
+        "members": ["Rahil M. Harihar", "Siddarth Bhave"],
+        "relationship_type": "co-founders",
+        "context": "AaMaRa Technologies - ₹3M profit bootstrapped startup"
+      },
+      {
+        "members": ["Rahil M. Harihar", "Siddarth Bhave"],
+        "relationship_type": "alma_mater",
+        "context": "Ramaiah Institute of Technology, Bangalore"
+      }
+    ]
+  },
+
+  "project": {
+    "title": "SAP RPT-1 Benchmarking Study",
+    "sponsor": {
+      "name": "SAP",
+      "division": "SAP AI Foundation",
+      "contact_info": "See stakeholders section for detailed contacts"
+    },
+    "mission": "Conduct the first comprehensive, independent, academic-quality benchmarking study of SAP RPT-1 (Relational Pre-trained Transformer) against competing tabular AI models, delivering publication-quality findings suitable for NeurIPS/ICML 2026.",
+    "strategic_value": [
+      {
+        "value": "Independent Validation",
+        "description": "First external academic benchmarking of SAP RPT-1 provides credible third-party validation of performance claims"
+      },
+      {
+        "value": "Competitive Positioning",
+        "description": "Systematic comparison against TabPFN, TabICL, AutoGluon clarifies SAP RPT-1's competitive advantages and limitations"
+      },
+      {
+        "value": "Use Case Guidance",
+        "description": "Identify optimal datasets/scenarios where RPT-1 excels vs. underperforms, guiding enterprise adoption"
+      },
+      {
+        "value": "Publication Impact",
+        "description": "NeurIPS/ICML publication raises SAP RPT-1's profile in academic ML community"
+      },
+      {
+        "value": "Talent Pipeline",
+        "description": "UW MSIM team engagement creates potential recruiting pipeline and academic partnership"
+      }
+    ],
+    "deliverables_overview": [
+      {
+        "deliverable": "SAP_RPT1_Benchmarking_Proposal.pptx",
+        "format": "PowerPoint (35-45 slides)",
+        "target_audience": "SAP executives and stakeholders"
+      },
+      {
+        "deliverable": "SAP_RPT1_Benchmarking_Report.pdf",
+        "format": "PDF (25-35 pages)",
+        "target_audience": "SAP technical teams and decision makers"
+      },
+      {
+        "deliverable": "SAP_RPT1_Technical_Appendix.pdf",
+        "format": "PDF (30-40 pages)",
+        "target_audience": "SAP engineers and researchers"
+      },
+      {
+        "deliverable": "COMPLETE_PROPOSAL_VIEWER.html",
+        "format": "Interactive HTML",
+        "target_audience": "All stakeholders (web-accessible)"
+      }
+    ],
+    "quality_standard": "BCG/McKinsey caliber (9.5/10)",
+    "target_conferences": ["NeurIPS 2026", "ICML 2026"]
+  },
+
+  "research_highlights": {
+    "sap_rpt_overview": {
+      "description": "SAP RPT-1 (ConTextTab) is the first enterprise relational foundation model for tabular data, released November 2025. It uses semantic understanding and in-context learning to process tabular datasets without task-specific fine-tuning.",
+      "key_innovations": [
+        "Relational foundation model architecture for tabular data",
+        "Semantic-aware in-context learning",
+        "Zero-shot and few-shot tabular prediction",
+        "Enterprise-grade open-source implementation (sap-rpt-1-oss)"
+      ],
+      "performance_claims": [
+        {
+          "claim": "Outperforms traditional ML on small datasets",
+          "metric": "Reported competitive performance vs. AutoGluon on TabArena subset",
+          "source": "ConTextTab paper (arXiv 2506.10707)"
+        }
+      ],
+      "limitations": [
+        "No comprehensive third-party benchmarking exists yet",
+        "Performance on large-scale datasets (>100K rows) unclear",
+        "Computational cost vs. traditional ML not fully quantified"
+      ]
+    },
+    "competitive_landscape": [
+      {
+        "model_name": "TabPFN v2.5",
+        "category": "Foundation Model",
+        "key_strengths": ["Transformer-based", "Fast inference", "No hyperparameter tuning"],
+        "known_performance": "Published in Nature 2025, state-of-the-art on small tabular datasets"
+      },
+      {
+        "model_name": "TabICL",
+        "category": "Foundation Model",
+        "key_strengths": ["In-context learning", "Scalable architecture", "ICML 2025"],
+        "known_performance": "Competitive with TabPFN on classification tasks"
+      },
+      {
+        "model_name": "AutoGluon",
+        "category": "AutoML Platform",
+        "key_strengths": ["Ensemble methods", "AutoML automation", "Proven track record"],
+        "known_performance": "TabArena baseline, strong across diverse datasets"
+      },
+      {
+        "model_name": "XGBoost",
+        "category": "Gradient Boosting",
+        "key_strengths": ["Fast training", "Interpretable", "Industry standard"],
+        "known_performance": "Baseline for tabular ML benchmarks"
+      },
+      {
+        "model_name": "CatBoost",
+        "category": "Gradient Boosting",
+        "key_strengths": ["Categorical handling", "Robust defaults"],
+        "known_performance": "Competitive with XGBoost on many tasks"
+      }
+    ],
+    "methodology_framework": {
+      "statistical_tests": ["Friedman test", "Nemenyi post-hoc", "Wilcoxon signed-rank"],
+      "evaluation_metrics": ["ROC-AUC", "Accuracy", "F1-score", "Log loss", "Training time", "Inference time"],
+      "experimental_protocol": "10-fold cross-validation on 70+ datasets from TabArena and TabZilla benchmarks, with statistical significance testing and reproducibility protocols (Docker, random seeds, REFORMS checklist)."
+    },
+    "compute_strategy": {
+      "primary_resource": "UW Tillicum",
+      "budget_scenario": "moderate",
+      "estimated_hours": 120,
+      "estimated_cost": 108
+    },
+    "dataset_strategy": {
+      "primary_benchmark": "TabArena",
+      "total_datasets": 71,
+      "coverage": ["Finance", "Healthcare", "Retail", "Manufacturing", "Government", "Education", "Technology"]
+    }
+  },
+
+  "stakeholders": {
+    "primary_contacts": [
+      {
+        "name": "Walter Sun",
+        "title": "Global Head of AI, SAP",
+        "division": "SAP AI Foundation",
+        "relevance": "Executive sponsor for AI Foundation, UW affiliate faculty (GOLDEN TICKET)",
+        "contact_approach": "Academic partnership via UW connection",
+        "uw_affiliation": true
+      },
+      {
+        "name": "Sam Thelin",
+        "title": "Research Scientist, SAP AI Foundation",
+        "division": "SAP AI Foundation - RPT-1 Core Team",
+        "relevance": "Lead author on ConTextTab paper, technical expert on RPT-1",
+        "contact_approach": "Technical collaboration, paper co-authorship potential"
+      },
+      {
+        "name": "Johannes Hoffart",
+        "title": "Research Director, SAP AI Foundation",
+        "division": "SAP AI Foundation",
+        "relevance": "Oversees RPT-1 research direction, publication strategy",
+        "contact_approach": "Academic research proposal, NeurIPS/ICML alignment"
+      }
+    ],
+    "organizational_context": "SAP AI Foundation is led by Walter Sun (Global Head) with teams in Walldorf (Germany), Berlin, Paris, and Palo Alto. The RPT-1 team includes 10+ PhDs working on tabular foundation models.",
+    "outreach_strategy": {
+      "timeline": "Week 3: Initial outreach after proposal complete, Week 5: Follow-up with preliminary findings, Week 10: Share results preview",
+      "key_milestones": [
+        {
+          "week": 3,
+          "milestone": "Initial outreach to Walter Sun via UW connection",
+          "action": "Send 1-page research proposal via UW faculty introduction"
+        },
+        {
+          "week": 5,
+          "milestone": "Technical collaboration with Sam Thelin",
+          "action": "Share methodology and seek feedback on RPT-1 configuration"
+        },
+        {
+          "week": 10,
+          "milestone": "Results preview for SAP team",
+          "action": "Present preliminary findings and discuss publication co-authorship"
+        }
+      ],
+      "value_propositions": [
+        {
+          "role": "Executive Leadership",
+          "value_prop": "Independent validation of RPT-1 from top-tier academic institution (UW)"
+        },
+        {
+          "role": "Core Researchers",
+          "value_prop": "Publication opportunity at NeurIPS/ICML, academic collaboration"
+        },
+        {
+          "role": "Product Managers",
+          "value_prop": "Use case guidance and competitive positioning insights for go-to-market"
+        }
+      ]
+    }
+  },
+
+  "timeline": {
+    "start_date": "2025-11-08",
+    "end_date": "2026-01-31",
+    "total_weeks": 12,
+    "phases": [
+      {
+        "phase_name": "Research & Planning",
+        "weeks": "Week 1-2",
+        "description": "Research intelligence, stakeholder mapping, infrastructure setup",
+        "deliverables": ["Research files", "Stakeholder intelligence", "Proposal content"]
+      },
+      {
+        "phase_name": "Proposal Development",
+        "weeks": "Week 3-4",
+        "description": "Content creation, visual design, interactive elements, code repository",
+        "deliverables": ["PowerPoint", "PDF Report", "Technical Appendix", "Web Viewer"]
+      },
+      {
+        "phase_name": "Infrastructure & Dataset Prep",
+        "weeks": "Week 4-5",
+        "description": "Code repository, Docker environments, dataset downloads",
+        "deliverables": ["Benchmarking codebase", "70+ datasets ready", "Model wrappers"]
+      },
+      {
+        "phase_name": "Benchmarking Experiments",
+        "weeks": "Week 6-10",
+        "description": "Run experiments across all models and datasets",
+        "deliverables": ["Experimental results", "Statistical analysis", "Performance data"]
+      },
+      {
+        "phase_name": "Analysis & Paper Writing",
+        "weeks": "Week 11-12",
+        "description": "Statistical testing, results analysis, paper drafting",
+        "deliverables": ["NeurIPS/ICML paper draft", "Final presentation", "Results dashboard"]
+      }
+    ],
+    "milestones": [
+      {
+        "milestone_id": "M1",
+        "name": "Research Foundation Complete",
+        "week": 2,
+        "description": "All research files and stakeholder intelligence completed"
+      },
+      {
+        "milestone_id": "M2",
+        "name": "Proposal Content Complete",
+        "week": 3,
+        "description": "All content files (markdown and Word) completed"
+      },
+      {
+        "milestone_id": "M3",
+        "name": "Visuals & Interactive Complete",
+        "week": 3,
+        "description": "All visual assets and interactive elements completed"
+      },
+      {
+        "milestone_id": "M4",
+        "name": "Proposal Delivered to SAP",
+        "week": 4,
+        "description": "Final deliverables (PPT, PDF, HTML) delivered"
+      },
+      {
+        "milestone_id": "M5",
+        "name": "Benchmarking Complete",
+        "week": 10,
+        "description": "All experimental runs completed across 70+ datasets"
+      },
+      {
+        "milestone_id": "M6",
+        "name": "Statistical Analysis Complete",
+        "week": 11,
+        "description": "Friedman/Nemenyi tests, critical difference diagrams completed"
+      },
+      {
+        "milestone_id": "M7",
+        "name": "Paper Draft Complete",
+        "week": 12,
+        "description": "NeurIPS/ICML paper draft ready for submission"
+      }
+    ]
+  },
+
+  "models": {
+    "foundation_models": [
+      {
+        "name": "SAP RPT-1-OSS (Small)",
+        "category": "Foundation Model",
+        "parameters": "172M (16M trainable)",
+        "github_url": "https://github.com/SAP-samples/sap-rpt-1-oss",
+        "python_version": "3.11",
+        "key_features": ["Relational architecture", "In-context learning", "Zero-shot prediction", "Semantic understanding"],
+        "docker_image": "sap-rpt1:latest"
+      },
+      {
+        "name": "TabPFN v2.5",
+        "category": "Foundation Model",
+        "parameters": "Not disclosed",
+        "github_url": "https://github.com/PriorLabs/tabpfn",
+        "python_version": "3.9+",
+        "key_features": ["Transformer-based", "Prior-fitted networks", "Fast inference", "No hyperparameter tuning"]
+      },
+      {
+        "name": "TabICL",
+        "category": "Foundation Model",
+        "parameters": "Scalable architecture",
+        "github_url": "https://github.com/soda-inria/tabicl",
+        "python_version": "3.9+",
+        "key_features": ["In-context learning", "Scalable to large datasets", "ICML 2025"]
+      }
+    ],
+    "automl_platforms": [
+      {
+        "name": "AutoGluon Tabular",
+        "category": "AutoML Platform",
+        "github_url": "https://github.com/autogluon/autogluon",
+        "python_version": "3.8+",
+        "key_features": ["Ensemble methods", "Automated feature engineering", "Hyperparameter optimization"]
+      }
+    ],
+    "traditional_baselines": [
+      {
+        "name": "XGBoost",
+        "category": "Gradient Boosting",
+        "library": "xgboost",
+        "python_version": "3.8+"
+      },
+      {
+        "name": "CatBoost",
+        "category": "Gradient Boosting",
+        "library": "catboost",
+        "python_version": "3.8+"
+      },
+      {
+        "name": "LightGBM",
+        "category": "Gradient Boosting",
+        "library": "lightgbm",
+        "python_version": "3.8+"
+      }
+    ],
+    "total_count": 7
+  },
+
+  "datasets": {
+    "primary_benchmark": "TabArena",
+    "datasets_list": [
+      {
+        "name": "adult",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 48842,
+        "columns": 14,
+        "classes": 2,
+        "missing_percentage": 0,
+        "openml_task_id": 7592
+      },
+      {
+        "name": "bank-marketing",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 45211,
+        "columns": 16,
+        "classes": 2,
+        "missing_percentage": 0,
+        "openml_task_id": 14965
+      },
+      {
+        "name": "credit-g",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 1000,
+        "columns": 20,
+        "classes": 2,
+        "missing_percentage": 0,
+        "openml_task_id": 31
+      },
+      {
+        "name": "diabetes",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 768,
+        "columns": 8,
+        "classes": 2,
+        "missing_percentage": 0,
+        "openml_task_id": 37
+      },
+      {
+        "name": "electricity",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 45312,
+        "columns": 8,
+        "classes": 2,
+        "missing_percentage": 0,
+        "openml_task_id": 151
+      },
+      {
+        "name": "higgs",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 98050,
+        "columns": 28,
+        "classes": 2,
+        "missing_percentage": 0,
+        "openml_task_id": 146606
+      },
+      {
+        "name": "jannis",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 83733,
+        "columns": 54,
+        "classes": 4,
+        "missing_percentage": 0,
+        "openml_task_id": 168350
+      },
+      {
+        "name": "nursery",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 12960,
+        "columns": 8,
+        "classes": 5,
+        "missing_percentage": 0,
+        "openml_task_id": 334
+      },
+      {
+        "name": "poker-hand",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 1025010,
+        "columns": 10,
+        "classes": 10,
+        "missing_percentage": 0,
+        "openml_task_id": 354
+      },
+      {
+        "name": "vehicle",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 846,
+        "columns": 18,
+        "classes": 4,
+        "missing_percentage": 0,
+        "openml_task_id": 53
+      },
+      {
+        "name": "wine-quality-red",
+        "source": "TabArena",
+        "task_type": "classification",
+        "rows": 1599,
+        "columns": 11,
+        "classes": 6,
+        "missing_percentage": 0,
+        "openml_task_id": 49
+      },
+      {
+        "name": "california-housing",
+        "source": "TabArena",
+        "task_type": "regression",
+        "rows": 20640,
+        "columns": 8,
+        "missing_percentage": 0,
+        "openml_task_id": 189354
+      }
+    ],
+    "total_count": 71,
+    "estimated_size_gb": 8
+  },
+
+  "compute": {
+    "primary_resource": {
+      "name": "UW Tillicum",
+      "hardware": "H200 80GB GPUs",
+      "cost_per_hour": 0.90,
+      "availability": "Apply for demo account, then research allocation"
+    },
+    "backup_resources": [
+      {
+        "name": "AWS Research Credits",
+        "hardware": "p3.2xlarge (V100)",
+        "cost_per_hour": 3.06
+      },
+      {
+        "name": "Azure for Students",
+        "hardware": "NC6s v3 (V100)",
+        "cost_per_hour": 3.06
+      }
+    ],
+    "estimated_hours": 120,
+    "estimated_cost": 108
+  },
+
+  "design_system": {
+    "colors": {
+      "primary": {
+        "name": "Navy Blue",
+        "hex": "#1E3A8A",
+        "usage": "Main headings, key messages, CTAs"
+      },
+      "secondary": {
+        "name": "Slate Gray",
+        "hex": "#64748B",
+        "usage": "Body text, supporting elements, borders"
+      },
+      "accent": {
+        "name": "Teal",
+        "hex": "#14B8A6",
+        "usage": "Accents, highlights, data points, interactive elements"
+      }
+    },
+    "typography": {
+      "font_family": "Helvetica Neue, Arial, sans-serif",
+      "hierarchy": {
+        "main_title": "Helvetica Bold, 28pt, Navy Blue",
+        "section_headers": "Helvetica Bold, 24pt, Navy Blue",
+        "body_text": "Helvetica Regular, 12pt, Slate Gray"
+      }
+    },
+    "layout_principles": {
+      "white_space_rule": "40-50% of any slide/page should be empty space",
+      "grid_system": "12-column grid for consistency",
+      "one_message_per_slide": true
+    }
+  },
+
+  "citations": {
+    "papers": [
+      {
+        "citation_key": "spinaci2025",
+        "authors": "Spinaci, M., Polewczyk, M., Schambach, M., & Thelin, S.",
+        "title": "ConTextTab: A Semantics-Aware Tabular In-Context Learner",
+        "venue": "NeurIPS 2025",
+        "year": 2025,
+        "url": "https://arxiv.org/abs/2506.10707"
+      },
+      {
+        "citation_key": "hollmann2025",
+        "authors": "Hollmann, N., Müller, S., & Hutter, F.",
+        "title": "Accurate predictions on small data with a tabular foundation model",
+        "venue": "Nature",
+        "year": 2025,
+        "url": "https://doi.org/10.1038/s41586-024-08328-6"
+      },
+      {
+        "citation_key": "tabarena2025",
+        "authors": "AutoGluon Team",
+        "title": "TabArena: A Living Benchmark for Tabular Prediction",
+        "venue": "arXiv",
+        "year": 2025,
+        "url": "https://arxiv.org/abs/2506.16791"
+      },
+      {
+        "citation_key": "tabzilla2023",
+        "authors": "Multiple authors",
+        "title": "TabZilla: A Large-Scale Tabular Benchmark Suite",
+        "venue": "NeurIPS 2023",
+        "year": 2023,
+        "url": "https://arxiv.org/abs/2305.02997"
+      },
+      {
+        "citation_key": "autogluon2020",
+        "authors": "Erickson, N., et al.",
+        "title": "AutoGluon-Tabular: Robust and Accurate AutoML for Structured Data",
+        "venue": "arXiv",
+        "year": 2020,
+        "url": "https://arxiv.org/abs/2003.06505"
+      }
+    ],
+    "github_repositories": [
+      {
+        "name": "sap-rpt-1-oss",
+        "url": "https://github.com/SAP-samples/sap-rpt-1-oss",
+        "description": "SAP RPT-1 open-source implementation"
+      },
+      {
+        "name": "tabpfn",
+        "url": "https://github.com/PriorLabs/tabpfn",
+        "description": "TabPFN prior-fitted networks"
+      },
+      {
+        "name": "autogluon",
+        "url": "https://github.com/autogluon/autogluon",
+        "description": "AutoGluon AutoML toolkit"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "TabArena",
+        "source": "TabArena",
+        "url": "https://tabarena.ai"
+      },
+      {
+        "name": "TabZilla",
+        "source": "TabZilla",
+        "url": "https://github.com/naszilla/tabzilla"
+      },
+      {
+        "name": "OpenML-CC18",
+        "source": "OpenML",
+        "url": "https://www.openml.org/s/99"
+      }
+    ]
+  }
+}

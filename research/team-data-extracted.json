@@ -1,0 +1,432 @@
+[
+  {
+    "id": "member_1",
+    "name": "Mathew Jerry Meleth",
+    "title": "Cloud & Data Engineer",
+    "experience_years": 3,
+    "core_skills": [
+      "Cloud & Big Data Analytics",
+      "Data Warehousing",
+      "Serverless Architecture",
+      "Distributed Data Processing",
+      "Data Modeling",
+      "Data Visualization",
+      "CI/CD",
+      "Agile",
+      "Scrum",
+      "Data Pipeline Design",
+      "Cloud Infrastructure"
+    ],
+    "key_achievements": [
+      {
+        "description": "Reduced data ingestion time by 35%",
+        "metric": "35%",
+        "impact": "Reduced data ingestion time for multi-terabyte datasets"
+      },
+      {
+        "description": "Improved deployment efficiency by 40%",
+        "metric": "40%",
+        "impact": "Improved deployment efficiency through standardized workflows"
+      },
+      {
+        "description": "Improved pipeline reliability by 25%",
+        "metric": "25%",
+        "impact": "Improved pipeline reliability and operational visibility"
+      },
+      {
+        "description": "Accelerated data processing speed by 40%",
+        "metric": "40%",
+        "impact": "Accelerated data ingestion and processing speed"
+      },
+      {
+        "description": "Uncovered $250k in revenue losses",
+        "metric": "$250,000",
+        "impact": "Uncovered previously unrecognized revenue losses due to supply chain inefficiencies"
+      },
+      {
+        "description": "Reduced travel time by 15 hours/month per team member",
+        "metric": "15 hours/month",
+        "impact": "Reduced travel time per team member through route optimization"
+      },
+      {
+        "description": "Reduced processing time from one month to two days",
+        "metric": "93%",
+        "impact": "Reduced processing time from one month to two days while maintaining 100% compliance"
+      },
+      {
+        "description": "Improved pipeline deployment efficiency by 40%",
+        "metric": "40%",
+        "impact": "Improved pipeline deployment efficiency and seamless integration"
+      },
+      {
+        "description": "Reduced manual effort by 20%",
+        "metric": "20%",
+        "impact": "Reduced manual effort through automation"
+      },
+      {
+        "description": "25% faster reporting",
+        "metric": "25%",
+        "impact": "Enabled real-time audit tracking with faster reporting"
+      },
+      {
+        "description": "Reduced inefficiencies by 30%",
+        "metric": "30%",
+        "impact": "Reduced store visit planning inefficiencies"
+      },
+      {
+        "description": "Improved data retrieval speeds by 30%",
+        "metric": "30%",
+        "impact": "Improved data retrieval speeds for YouTube analytics"
+      },
+      {
+        "description": "40% improvement in targeted content strategies",
+        "metric": "40%",
+        "impact": "Improved targeted content strategies for enhanced viewer retention"
+      },
+      {
+        "description": "Secured 200+ internship placements",
+        "metric": "200+",
+        "impact": "Secured internship placements and advanced AIESEC's global leadership objectives"
+      }
+    ],
+    "past_companies": [
+      "Rocket Mortgage",
+      "Mu Sigma",
+      "Adobe"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor Of Technology in Information Technology",
+        "school": "Vellore Institute Of Technology, School of Information Technology & Engineering",
+        "gpa": "8.71",
+        "graduation": "June 2021"
+      }
+    ],
+    "expertise_areas": []
+  },
+  {
+    "id": "member_2",
+    "name": "Rahil M. Harihar",
+    "title": "Product Lead & Development Consultant",
+    "experience_years": 3,
+    "core_skills": [
+      "Product Management",
+      "Go-To-Market",
+      "User/Market Research",
+      "Product Roadmap",
+      "PRDs",
+      "OKRs",
+      "Risk Identification",
+      "Agile/Scrum",
+      "Product Strategy",
+      "Usability Testing",
+      "Prototyping",
+      "Design Thinking",
+      "A/B Testing",
+      "Experiment Design",
+      "Data Analysis",
+      "Funnel Analysis",
+      "Cohort Analysis",
+      "Conversion Optimization",
+      "Retention",
+      "Growth",
+      "RICE Prioritization",
+      "Backlog Grooming",
+      "Cross-Functional Leadership",
+      "Stakeholder Management",
+      "API Integrations",
+      "KPI Ownership"
+    ],
+    "key_achievements": [
+      {
+        "description": "Bootstrapped to \u20b93 Million profit",
+        "metric": "\u20b93,000,000",
+        "impact": "Financial sustainability and business growth"
+      },
+      {
+        "description": "90% ML Model Accuracy",
+        "metric": "90%",
+        "impact": "High-accuracy forecasting for enterprise applications"
+      },
+      {
+        "description": "Cycle Time Reduction",
+        "metric": "48h \u2192 minutes",
+        "impact": "Massive operational efficiency improvement"
+      },
+      {
+        "description": "Sub-200ms Forecast Delivery",
+        "metric": "<200ms",
+        "impact": "Real-time decision making capability"
+      },
+      {
+        "description": "30% HR Efficiency Improvement",
+        "metric": "30%",
+        "impact": "Significant productivity gains in HR operations"
+      },
+      {
+        "description": "100+ SAP CPI Integrations",
+        "metric": "100+",
+        "impact": "Connected SAP S/4HANA, ECC, and third-party applications"
+      },
+      {
+        "description": "30% Latency Reduction",
+        "metric": "30%",
+        "impact": "Improved data visibility for 10,000+ business documents daily"
+      },
+      {
+        "description": "Raised $18k in Donations",
+        "metric": "$18,000",
+        "impact": "Significant fundraising success for charitable cause"
+      },
+      {
+        "description": "Consulted 15+ Fortune 500 Clients",
+        "metric": "15+",
+        "impact": "High-value enterprise client engagements"
+      },
+      {
+        "description": "Managed $60,000 Budget",
+        "metric": "$60,000",
+        "impact": "Financial stewardship for SAP India Network"
+      },
+      {
+        "description": "1,200 Pounds Rice Collection",
+        "metric": "1,200 lbs/month",
+        "impact": "Sustained food security for tribal communities over 12+ years"
+      }
+    ],
+    "past_companies": [
+      "Allan Frank Apprenticeship",
+      "SAP India Pvt. Ltd.",
+      "AaMaRa Technologies",
+      "Vanavasi Kalyan Ashram",
+      "Google Developer Student Club"
+    ],
+    "education": [
+      {
+        "degree": "Master of Science in Information Management (AI + Product/Project Management Specialization)",
+        "school": "University of Washington",
+        "gpa": "3.9",
+        "graduation": "June 2026"
+      },
+      {
+        "degree": "Bachelor of Technology, Computer Science Engineering",
+        "school": "Ramaiah Institute of Technology",
+        "gpa": "",
+        "graduation": ""
+      }
+    ],
+    "expertise_areas": []
+  },
+  {
+    "id": "member_3",
+    "name": "Siddarth Bhave",
+    "title": "Software Development Engineer",
+    "experience_years": 3.5,
+    "core_skills": [
+      "ETL Pipeline Development",
+      "Python",
+      "Java",
+      "C++",
+      "LLMs",
+      "Prompt Engineering",
+      "Multi-Agent Systems",
+      "RAG",
+      "Technical Problem Solving",
+      "Software Engineering",
+      "Cross-Functional Collaboration",
+      "System Design and Architecture",
+      "Platform and Cloud Engineering",
+      "Version Control Systems",
+      "Distributed Systems",
+      "Observability",
+      "Machine Learning",
+      "Generative AI",
+      "Operating Systems",
+      "Computer Networks",
+      "Database Systems",
+      "Data Structures and Algorithms",
+      "Object Oriented Programming",
+      "Technical Leadership"
+    ],
+    "key_achievements": [
+      {
+        "description": "Cost Savings through Network Monitoring",
+        "metric": "$1M annually",
+        "impact": "Estimated $1M annual savings in monitoring expenses"
+      },
+      {
+        "description": "Metric Retention Improvement",
+        "metric": "50% increase (+15 days)",
+        "impact": "Improved data availability for analysis"
+      },
+      {
+        "description": "Query Time Reduction - Mimir",
+        "metric": "From 5 minutes to 45 seconds",
+        "impact": "Faster data retrieval and analysis"
+      },
+      {
+        "description": "High-Throughput ETL Pipeline",
+        "metric": "75 million Kafka records per minute",
+        "impact": "Enabled real-time processing at scale"
+      },
+      {
+        "description": "Metric Retrieval Extension",
+        "metric": "Up to 60 days (+200%)",
+        "impact": "Enabled longer-term trend analysis"
+      },
+      {
+        "description": "ETL Query Time Reduction",
+        "metric": "50% reduction",
+        "impact": "Faster insights and decision-making"
+      },
+      {
+        "description": "Early Promotion and Tech Excellence Award",
+        "metric": "Early promotion",
+        "impact": "Recognition of technical excellence and impact"
+      },
+      {
+        "description": "Monitoring System Usage Reduction",
+        "metric": "50% reduction",
+        "impact": "Lower resource consumption"
+      },
+      {
+        "description": "Metric Export Rate Improvement",
+        "metric": "3x increase",
+        "impact": "Better real-time visibility"
+      },
+      {
+        "description": "Server Outage Alert Time Reduction",
+        "metric": "75% reduction (< 30s)",
+        "impact": "Faster incident response"
+      },
+      {
+        "description": "Turn-Around-Time Reduction",
+        "metric": "20% reduction",
+        "impact": "Improved operational efficiency"
+      },
+      {
+        "description": "Led Team to Deliver Multiple Projects",
+        "metric": "6 projects in 26 months",
+        "impact": "Self-funded and profitable since day 0"
+      },
+      {
+        "description": "Employee Efficiency Improvement",
+        "metric": "25% increase",
+        "impact": "Improved productivity for 1,200-employee factory"
+      },
+      {
+        "description": "Bookkeeping Time Reduction",
+        "metric": "75% reduction",
+        "impact": "Significant time savings"
+      },
+      {
+        "description": "Low Latency eBPF Monitoring",
+        "metric": "<5 microseconds",
+        "impact": "Production-ready monitoring with negligible impact"
+      }
+    ],
+    "past_companies": [
+      "Amazon Web Services (AWS)",
+      "Morgan Stanley",
+      "Aamara Technologies"
+    ],
+    "education": [
+      {
+        "degree": "Master of Science in Information Management",
+        "school": "University of Washington",
+        "gpa": "3.9",
+        "graduation": "Aug 2026"
+      },
+      {
+        "degree": "Bachelor of Engineering in Computer Science and Engineering",
+        "school": "Ramaiah Institute of Technology",
+        "gpa": "9.22",
+        "graduation": "Aug 2022"
+      }
+    ],
+    "expertise_areas": []
+  },
+  {
+    "id": "member_4",
+    "name": "Shreyas B Subramanya",
+    "title": "Senior Product Management Intern",
+    "experience_years": 4.5,
+    "core_skills": [
+      "Advanced Planning Systems (APS)",
+      "Supply Planning",
+      "Inventory Optimization",
+      "Sales & Operations Planning (S&OP)",
+      "Capacity Planning",
+      "Order Fulfillment",
+      "Process Design & Configuration",
+      "Network Optimization",
+      "Client-Facing Consulting",
+      "Stakeholder Management",
+      "ERP Integrations",
+      "Data Validation & Quality Frameworks",
+      "Cost Modeling"
+    ],
+    "key_achievements": [
+      {
+        "description": "70% Reduction in Batch-Run Time",
+        "metric": "70%",
+        "impact": "Scalable, cost-efficient solutions that enhanced system stability and reliability"
+      },
+      {
+        "description": "35% Reduction in Issue Resolution Time",
+        "metric": "35%",
+        "impact": "Enabled leadership and customer success teams to resolve issues faster"
+      },
+      {
+        "description": "20+ Global Implementations",
+        "metric": "20+",
+        "impact": "Driving planning efficiency across global implementations"
+      },
+      {
+        "description": "500+ Individuals Certified",
+        "metric": "500+",
+        "impact": "Significantly reducing performance issues across product implementation projects"
+      },
+      {
+        "description": "5+ Implementations Deployed",
+        "metric": "5+",
+        "impact": "Enhanced supply-chain resilience across implementations"
+      },
+      {
+        "description": "10+ Hours of Training Content",
+        "metric": "10+",
+        "impact": "500+ individuals certified with reduced performance issues"
+      },
+      {
+        "description": "Master's CGPA 3.88",
+        "metric": "3.88",
+        "impact": "Academic excellence at University of Washington"
+      },
+      {
+        "description": "Bachelor's CGPA 3.98",
+        "metric": "3.98",
+        "impact": "Academic excellence at BMS College of Engineering"
+      }
+    ],
+    "past_companies": [
+      "o9 Solutions",
+      "o9 Solutions",
+      "Indian Institute of Science"
+    ],
+    "education": [
+      {
+        "degree": "Master of Science",
+        "school": "University of Washington",
+        "gpa": "3.88",
+        "graduation": "Jun 2026"
+      },
+      {
+        "degree": "Bachelor of Engineering",
+        "school": "BMS College of Engineering",
+        "gpa": "3.98",
+        "graduation": "Aug 2020"
+      }
+    ],
+    "expertise_areas": []
+  }
+]

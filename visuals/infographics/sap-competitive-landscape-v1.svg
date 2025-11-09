@@ -1,0 +1,215 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- Title -->
+  <text x="960" y="80" font-family="Helvetica Neue, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+    Tabular AI Competitive Landscape
+  </text>
+  <text x="960" y="120" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#64748B" text-anchor="middle">
+    Foundation Models vs. AutoML vs. Traditional ML
+  </text>
+
+  <!-- Foundation Models Section -->
+  <g transform="translate(100, 200)">
+    <rect x="0" y="0" width="520" height="700" fill="#FFFFFF" stroke="#14B8A6" stroke-width="4" rx="12"/>
+    <rect x="0" y="0" width="520" height="70" fill="#14B8A6" rx="12"/>
+    <text x="260" y="48" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      Foundation Models
+    </text>
+
+    <!-- SAP RPT-1 -->
+    <g transform="translate(30, 100)">
+      <rect x="0" y="0" width="460" height="140" fill="#1E3A8A" rx="8"/>
+      <text x="230" y="35" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        SAP RPT-1 (ConTextTab)
+      </text>
+      <text x="20" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#F8FAFC">
+        • First enterprise relational foundation model
+      </text>
+      <text x="20" y="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#F8FAFC">
+        • Semantic-aware in-context learning
+      </text>
+      <text x="20" y="115" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#F8FAFC">
+        • Zero/few-shot tabular prediction
+      </text>
+    </g>
+
+    <!-- TabPFN -->
+    <g transform="translate(30, 260)">
+      <rect x="0" y="0" width="460" height="120" fill="#64748B" rx="8"/>
+      <text x="230" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        TabPFN v2.5
+      </text>
+      <text x="20" y="55" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Published in Nature 2025
+      </text>
+      <text x="20" y="75" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Prior-fitted networks, fast inference
+      </text>
+      <text x="20" y="95" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • KV-cache optimization for scaling
+      </text>
+    </g>
+
+    <!-- TabICL -->
+    <g transform="translate(30, 400)">
+      <rect x="0" y="0" width="460" height="120" fill="#64748B" rx="8"/>
+      <text x="230" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        TabICL
+      </text>
+      <text x="20" y="55" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • ICML 2025 publication
+      </text>
+      <text x="20" y="75" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Scalable to large datasets (500K+ rows)
+      </text>
+      <text x="20" y="95" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • In-context learning architecture
+      </text>
+    </g>
+
+    <!-- Footer -->
+    <text x="260" y="660" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      Zero-Shot / Few-Shot Paradigm
+    </text>
+  </g>
+
+  <!-- AutoML Section -->
+  <g transform="translate(700, 200)">
+    <rect x="0" y="0" width="520" height="700" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="4" rx="12"/>
+    <rect x="0" y="0" width="520" height="70" fill="#1E3A8A" rx="12"/>
+    <text x="260" y="48" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      AutoML Platforms
+    </text>
+
+    <!-- AutoGluon -->
+    <g transform="translate(30, 100)">
+      <rect x="0" y="0" width="460" height="160" fill="#1E3A8A" rx="8"/>
+      <text x="230" y="35" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        AutoGluon Tabular
+      </text>
+      <text x="20" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#F8FAFC">
+        • AWS flagship AutoML toolkit
+      </text>
+      <text x="20" y="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#F8FAFC">
+        • Multi-layer stack ensembling
+      </text>
+      <text x="20" y="115" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#F8FAFC">
+        • Automated feature engineering + HPO
+      </text>
+      <text x="20" y="140" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#F8FAFC">
+        • TabArena baseline benchmark
+      </text>
+    </g>
+
+    <!-- H2O AutoML -->
+    <g transform="translate(30, 280)">
+      <rect x="0" y="0" width="460" height="100" fill="#64748B" rx="8"/>
+      <text x="230" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        H2O AutoML
+      </text>
+      <text x="20" y="55" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Distributed AutoML framework
+      </text>
+      <text x="20" y="75" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Gradient boosting + stacking
+      </text>
+    </g>
+
+    <!-- Description -->
+    <g transform="translate(30, 420)">
+      <text x="230" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle" font-style="italic">
+        Automated machine learning platforms
+      </text>
+      <text x="230" y="55" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle" font-style="italic">
+        that optimize hyperparameters and
+      </text>
+      <text x="230" y="80" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle" font-style="italic">
+        ensemble multiple models automatically.
+      </text>
+    </g>
+
+    <!-- Footer -->
+    <text x="260" y="660" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Automated Training Paradigm
+    </text>
+  </g>
+
+  <!-- Traditional ML Section -->
+  <g transform="translate(1300, 200)">
+    <rect x="0" y="0" width="520" height="700" fill="#FFFFFF" stroke="#64748B" stroke-width="4" rx="12"/>
+    <rect x="0" y="0" width="520" height="70" fill="#64748B" rx="12"/>
+    <text x="260" y="48" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      Traditional ML
+    </text>
+
+    <!-- XGBoost -->
+    <g transform="translate(30, 100)">
+      <rect x="0" y="0" width="460" height="100" fill="#64748B" rx="8"/>
+      <text x="230" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        XGBoost
+      </text>
+      <text x="20" y="55" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Industry standard gradient boosting
+      </text>
+      <text x="20" y="75" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Fast training, interpretable features
+      </text>
+    </g>
+
+    <!-- CatBoost -->
+    <g transform="translate(30, 220)">
+      <rect x="0" y="0" width="460" height="100" fill="#64748B" rx="8"/>
+      <text x="230" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        CatBoost
+      </text>
+      <text x="20" y="55" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Specialized categorical handling
+      </text>
+      <text x="20" y="75" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Robust default hyperparameters
+      </text>
+    </g>
+
+    <!-- LightGBM -->
+    <g transform="translate(30, 340)">
+      <rect x="0" y="0" width="460" height="100" fill="#64748B" rx="8"/>
+      <text x="230" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        LightGBM
+      </text>
+      <text x="20" y="55" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Fast training on large datasets
+      </text>
+      <text x="20" y="75" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC">
+        • Leaf-wise tree growth
+      </text>
+    </g>
+
+    <!-- Description -->
+    <g transform="translate(30, 480)">
+      <text x="230" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle" font-style="italic">
+        Proven gradient boosting methods
+      </text>
+      <text x="230" y="55" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle" font-style="italic">
+        that require manual hyperparameter
+      </text>
+      <text x="230" y="80" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle" font-style="italic">
+        tuning but deliver consistent results.
+      </text>
+    </g>
+
+    <!-- Footer -->
+    <text x="260" y="660" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#64748B" text-anchor="middle">
+      Manual Training Paradigm
+    </text>
+  </g>
+
+  <!-- Bottom Note -->
+  <text x="960" y="1000" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle" font-style="italic">
+    Our study benchmarks all three categories to determine optimal use cases for SAP RPT-1
+  </text>
+  <text x="960" y="1040" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#64748B" text-anchor="middle" font-style="italic">
+    Source: UW MSIM Team Analysis, SAP RPT-1 Benchmarking Proposal 2025
+  </text>
+</svg>

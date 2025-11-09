@@ -1,0 +1,29 @@
+# TabICL Dependencies (Python 3.9+)
+# Core Scientific Stack
+numpy>=1.21.0,<2.0.0
+pandas>=1.3.0,<3.0.0
+scipy>=1.7.0,<2.0.0
+scikit-learn>=1.0.0,<2.0.0
+
+# Deep Learning
+torch>=2.0.0,<3.0.0
+transformers>=4.30.0
+
+# TabICL (may need to be installed from GitHub if not on PyPI)
+# pip install git+https://github.com/[tabicl-repo].git
+
+# Utilities
+tqdm>=4.62.0
+pyyaml>=6.0
+joblib>=1.1.0
+psutil>=5.8.0
+
+# Monitoring
+gputil>=1.4.0
+
+# Data Format Support
+pyarrow>=8.0.0
+openpyxl>=3.0.0
+
+# Logging
+colorlog>=6.7.0

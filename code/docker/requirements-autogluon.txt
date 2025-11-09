@@ -1,0 +1,25 @@
+# AutoGluon Dependencies (Python 3.10)
+# Core Scientific Stack
+numpy>=1.21.0,<2.0.0
+pandas>=1.4.0,<3.0.0
+scipy>=1.9.0,<2.0.0
+scikit-learn>=1.0.0,<2.0.0
+
+# AutoGluon Tabular (full install with all extras)
+autogluon.tabular[all]>=1.1.0
+
+# Utilities
+tqdm>=4.64.0
+pyyaml>=6.0
+joblib>=1.2.0
+psutil>=5.9.0
+
+# Monitoring
+gputil>=1.4.0
+
+# Data Format Support
+pyarrow>=10.0.0
+openpyxl>=3.0.0
+
+# Logging
+colorlog>=6.7.0

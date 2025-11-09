@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Comparison Matrix - SAP RPT-1 Benchmarking</title>
+    <style>
+        :root {
+            --navy-blue: #1E3A8A;
+            --slate-gray: #64748B;
+            --teal: #14B8A6;
+            --off-white: #F8FAFC;
+            --pure-white: #FFFFFF;
+            --font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--off-white);
+            padding: 2rem;
+            color: var(--slate-gray);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--pure-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--navy-blue);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--slate-gray);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .control-group label {
+            font-weight: bold;
+            color: var(--navy-blue);
+        }
+
+        select, input {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--slate-gray);
+            border-radius: 6px;
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            background: var(--pure-white);
+            color: var(--slate-gray);
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--teal);
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        thead {
+            background: var(--navy-blue);
+            color: var(--pure-white);
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        th:hover {
+            background: #2563eb;
+        }
+
+        th::after {
+            content: '⇅';
+            position: absolute;
+            right: 1rem;
+            opacity: 0.5;
+        }
+
+        th.sort-asc::after {
+            content: '↑';
+            opacity: 1;
+            color: var(--teal);
+        }
+
+        th.sort-desc::after {
+            content: '↓';
+            opacity: 1;
+            color: var(--teal);
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        tbody tr:hover {
+            background: var(--off-white);
+        }
+
+        tbody tr.highlight {
+            background: #FEF3C7;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .category-foundation {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .category-automl {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .category-baseline {
+            background: #FED7AA;
+            color: #9A3412;
+        }
+
+        .metric-high {
+            color: var(--teal);
+            font-weight: bold;
+        }
+
+        .metric-medium {
+            color: var(--slate-gray);
+        }
+
+        .metric-low {
+            color: #F59E0B;
+        }
+
+        .legend {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--off-white);
+            border-radius: 8px;
+            border-left: 4px solid var(--teal);
+        }
+
+        .legend h3 {
+            color: var(--navy-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .legend-items {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            th, td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Model Comparison Matrix</h1>
+        <p class="subtitle">SAP RPT-1 Benchmarking Study - Interactive Comparison Tool</p>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter">
+                    <option value="all">All Models</option>
+                    <option value="foundation">Foundation Models</option>
+                    <option value="automl">AutoML Platforms</option>
+                    <option value="baseline">Traditional Baselines</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="search">Search:</label>
+                <input type="text" id="search" placeholder="Search model names...">
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="comparison-table">
+                <thead>
+                    <tr>
+                        <th data-sort="name">Model Name</th>
+                        <th data-sort="category">Category</th>
+                        <th data-sort="params">Parameters</th>
+                        <th data-sort="features">Key Features</th>
+                        <th data-sort="strengths">Strengths</th>
+                        <th data-sort="paper">Publication</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <span class="category-badge category-foundation">Foundation Model</span>
+                    <span>Pre-trained tabular transformers</span>
+                </div>
+                <div class="legend-item">
+                    <span class="category-badge category-automl">AutoML Platform</span>
+                    <span>Automated ensemble methods</span>
+                </div>
+                <div class="legend-item">
+                    <span class="category-badge category-baseline">Traditional Baseline</span>
+                    <span>Gradient boosting frameworks</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Model data
+        const models = [
+            {
+                name: 'SAP RPT-1-OSS (Small)',
+                category: 'foundation',
+                params: '172M (16M trainable)',
+                features: 'Relational architecture, In-context learning, Zero-shot prediction',
+                strengths: 'Semantic understanding, No fine-tuning required',
+                paper: 'ConTextTab (NeurIPS 2025)'
+            },
+            {
+                name: 'TabPFN v2.5',
+                category: 'foundation',
+                params: 'Undisclosed',
+                features: 'Transformer-based, Prior-fitted networks, Fast inference',
+                strengths: 'No hyperparameter tuning, State-of-the-art on small datasets',
+                paper: 'Nature 2025'
+            },
+            {
+                name: 'TabICL',
+                category: 'foundation',
+                params: 'Scalable',
+                features: 'In-context learning, Scalable to large datasets',
+                strengths: 'Competitive performance, ICML-validated',
+                paper: 'ICML 2025'
+            },
+            {
+                name: 'AutoGluon Tabular',
+                category: 'automl',
+                params: 'N/A (Ensemble)',
+                features: 'Ensemble methods, Automated feature engineering, Hyperparameter optimization',
+                strengths: 'TabArena baseline, Proven robustness',
+                paper: 'arXiv 2020'
+            },
+            {
+                name: 'XGBoost',
+                category: 'baseline',
+                params: 'N/A',
+                features: 'Gradient boosting, Fast training, Interpretable',
+                strengths: 'Industry standard, Highly optimized',
+                paper: 'KDD 2016'
+            },
+            {
+                name: 'CatBoost',
+                category: 'baseline',
+                params: 'N/A',
+                features: 'Categorical handling, Robust defaults, Gradient boosting',
+                strengths: 'Excellent categorical feature handling',
+                paper: 'arXiv 2018'
+            },
+            {
+                name: 'LightGBM',
+                category: 'baseline',
+                params: 'N/A',
+                features: 'Histogram-based, Fast training, Low memory',
+                strengths: 'Speed and efficiency',
+                paper: 'NeurIPS 2017'
+            }
+        ];
+
+        let currentSort = { column: null, direction: null };
+        let filteredModels = [...models];
+
+        // Initialize table
+        function renderTable(data) {
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = '';
+
+            data.forEach((model, index) => {
+                const row = document.createElement('tr');
+                if (model.name.includes('SAP RPT-1')) {
+                    row.classList.add('highlight');
+                }
+
+                row.innerHTML = `
+                    <td><strong>${model.name}</strong></td>
+                    <td><span class="category-badge category-${model.category}">${getCategoryLabel(model.category)}</span></td>
+                    <td>${model.params}</td>
+                    <td>${model.features}</td>
+                    <td>${model.strengths}</td>
+                    <td>${model.paper}</td>
+                `;
+
+                tbody.appendChild(row);
+            });
+        }
+
+        function getCategoryLabel(category) {
+            const labels = {
+                'foundation': 'Foundation Model',
+                'automl': 'AutoML Platform',
+                'baseline': 'Traditional Baseline'
+            };
+            return labels[category] || category;
+        }
+
+        // Sort functionality
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+            th.addEventListener('click', () => {
+                const column = th.dataset.sort;
+
+                // Toggle sort direction
+                if (currentSort.column === column) {
+                    currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                } else {
+                    currentSort.column = column;
+                    currentSort.direction = 'asc';
+                }
+
+                // Update UI
+                document.querySelectorAll('th').forEach(h => {
+                    h.classList.remove('sort-asc', 'sort-desc');
+                });
+                th.classList.add(`sort-${currentSort.direction}`);
+
+                // Sort data
+                filteredModels.sort((a, b) => {
+                    let aVal = a[column];
+                    let bVal = b[column];
+
+                    if (typeof aVal === 'string') {
+                        aVal = aVal.toLowerCase();
+                        bVal = bVal.toLowerCase();
+                    }
+
+                    if (currentSort.direction === 'asc') {
+                        return aVal > bVal ? 1 : -1;
+                    } else {
+                        return aVal < bVal ? 1 : -1;
+                    }
+                });
+
+                renderTable(filteredModels);
+            });
+        });
+
+        // Filter by category
+        document.getElementById('category-filter').addEventListener('change', (e) => {
+            const category = e.target.value;
+
+            if (category === 'all') {
+                filteredModels = [...models];
+            } else {
+                filteredModels = models.filter(m => m.category === category);
+            }
+
+            applySearch();
+        });
+
+        // Search functionality
+        document.getElementById('search').addEventListener('input', (e) => {
+            applySearch();
+        });
+
+        function applySearch() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const categoryFilter = document.getElementById('category-filter').value;
+
+            filteredModels = models.filter(m => {
+                const matchesCategory = categoryFilter === 'all' || m.category === categoryFilter;
+                const matchesSearch = m.name.toLowerCase().includes(searchTerm) ||
+                                     m.features.toLowerCase().includes(searchTerm) ||
+                                     m.strengths.toLowerCase().includes(searchTerm);
+
+                return matchesCategory && matchesSearch;
+            });
+
+            renderTable(filteredModels);
+        }
+
+        // Initial render
+        renderTable(models);
+
+        console.log('Model Comparison Interactive Table loaded');
+        console.log(`Total models: ${models.length}`);
+    </script>
+
+</body>
+</html>

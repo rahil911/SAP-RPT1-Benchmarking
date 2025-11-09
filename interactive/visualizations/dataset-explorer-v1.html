@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Explorer - SAP RPT-1 Benchmarking</title>
+    <style>
+        :root {
+            --navy-blue: #1E3A8A;
+            --slate-gray: #64748B;
+            --teal: #14B8A6;
+            --off-white: #F8FAFC;
+            --pure-white: #FFFFFF;
+            --font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--off-white);
+            padding: 2rem;
+            color: var(--slate-gray);
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: var(--pure-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--navy-blue);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--slate-gray);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #2563eb 100%);
+            color: var(--pure-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--off-white);
+            border-radius: 8px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .control-group label {
+            font-weight: bold;
+            color: var(--navy-blue);
+            font-size: 0.9rem;
+        }
+
+        select, input {
+            padding: 0.75rem;
+            border: 2px solid var(--slate-gray);
+            border-radius: 6px;
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            background: var(--pure-white);
+            color: var(--slate-gray);
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--teal);
+        }
+
+        .datasets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .dataset-card {
+            background: var(--pure-white);
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dataset-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(30, 58, 138, 0.15);
+            border-color: var(--teal);
+        }
+
+        .dataset-header {
+            margin-bottom: 1rem;
+        }
+
+        .dataset-name {
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .task-classification {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .task-regression {
+            background: #FCE7F3;
+            color: #9F1239;
+        }
+
+        .dataset-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--off-white);
+            border-radius: 6px;
+        }
+
+        .stat-item {
+            font-size: 0.9rem;
+        }
+
+        .stat-item strong {
+            color: var(--navy-blue);
+        }
+
+        .source-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            background: var(--teal);
+            color: var(--pure-white);
+            font-weight: bold;
+        }
+
+        .size-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .size-bar {
+            flex: 1;
+            height: 8px;
+            background: #E5E7EB;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .size-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--teal) 0%, var(--navy-blue) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--slate-gray);
+            font-size: 1.1rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.1rem;
+            color: var(--slate-gray);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .datasets-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dataset Explorer</h1>
+        <p class="subtitle">SAP RPT-1 Benchmarking Study - 71 Datasets from TabArena & TabZilla</p>
+
+        <div class="stats-bar" id="stats-bar">
+            <div class="stat-card">
+                <span class="stat-value" id="total-datasets">71</span>
+                <span class="stat-label">Total Datasets</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="classification-count">60</span>
+                <span class="stat-label">Classification</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="regression-count">11</span>
+                <span class="stat-label">Regression</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="visible-count">71</span>
+                <span class="stat-label">Filtered Results</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="source-filter">Benchmark Source</label>
+                <select id="source-filter">
+                    <option value="all">All Sources</option>
+                    <option value="TabArena">TabArena</option>
+                    <option value="TabZilla">TabZilla</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="task-filter">Task Type</label>
+                <select id="task-filter">
+                    <option value="all">All Tasks</option>
+                    <option value="classification">Classification</option>
+                    <option value="regression">Regression</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="size-filter">Dataset Size</label>
+                <select id="size-filter">
+                    <option value="all">All Sizes</option>
+                    <option value="small">Small (<10K rows)</option>
+                    <option value="medium">Medium (10K-100K rows)</option>
+                    <option value="large">Large (>100K rows)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="search">Search Datasets</label>
+                <input type="text" id="search" placeholder="Search by name...">
+            </div>
+        </div>
+
+        <div id="datasets-container" class="datasets-grid">
+            <div class="loading">Loading datasets from shared-data.json...</div>
+        </div>
+    </div>
+
+    <script>
+        let allDatasets = [];
+        let filteredDatasets = [];
+
+        // Load datasets from shared-data.json
+        async function loadDatasets() {
+            const container = document.getElementById('datasets-container');
+
+            try {
+                const response = await fetch('../../shared-data.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+                const data = await response.json();
+
+                if (!data.datasets || !data.datasets.datasets_list) {
+                    throw new Error('Datasets not found in shared-data.json');
+                }
+
+                allDatasets = data.datasets.datasets_list;
+                filteredDatasets = [...allDatasets];
+
+                console.log(`✅ Loaded ${allDatasets.length} datasets`);
+                updateStats();
+                renderDatasets(filteredDatasets);
+
+            } catch (error) {
+                console.error('❌ Failed to load datasets:', error);
+                container.innerHTML = `
+                    <div class="no-results">
+                        <p><strong>Failed to load datasets</strong></p>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Error: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Render datasets
+        function renderDatasets(datasets) {
+            const container = document.getElementById('datasets-container');
+
+            if (datasets.length === 0) {
+                container.innerHTML = '<div class="no-results">No datasets match your filters</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+
+            datasets.forEach(dataset => {
+                const card = createDatasetCard(dataset);
+                container.appendChild(card);
+            });
+
+            updateVisibleCount(datasets.length);
+        }
+
+        // Create dataset card
+        function createDatasetCard(dataset) {
+            const card = document.createElement('div');
+            card.className = 'dataset-card';
+
+            const sizeCategory = getSizeCategory(dataset.rows);
+            const sizePercentage = Math.min((dataset.rows / 1000000) * 100, 100);
+
+            card.innerHTML = `
+                <div class="dataset-header">
+                    <div class="dataset-name">${escapeHtml(dataset.name)}</div>
+                    <span class="task-badge task-${dataset.task_type}">${capitalizeFirst(dataset.task_type)}</span>
+                    <span class="source-badge">${dataset.source}</span>
+                </div>
+
+                <div class="dataset-stats">
+                    <div class="stat-item"><strong>Rows:</strong> ${dataset.rows.toLocaleString()}</div>
+                    <div class="stat-item"><strong>Columns:</strong> ${dataset.columns}</div>
+                    ${dataset.classes ? `<div class="stat-item"><strong>Classes:</strong> ${dataset.classes}</div>` : ''}
+                    <div class="stat-item"><strong>Missing:</strong> ${dataset.missing_percentage}%</div>
+                </div>
+
+                <div class="size-indicator">
+                    <span style="font-size: 0.85rem; color: ${getSizeColor(sizeCategory)}">${sizeCategory}</span>
+                    <div class="size-bar">
+                        <div class="size-fill" style="width: ${sizePercentage}%"></div>
+                    </div>
+                </div>
+
+                ${dataset.openml_task_id ? `
+                    <div style="margin-top: 1rem; font-size: 0.85rem; color: ${getComputedStyle(document.documentElement).getPropertyValue('--slate-gray')}">
+                        OpenML Task ID: ${dataset.openml_task_id}
+                    </div>
+                ` : ''}
+            `;
+
+            return card;
+        }
+
+        // Filters
+        function applyFilters() {
+            const source = document.getElementById('source-filter').value;
+            const task = document.getElementById('task-filter').value;
+            const size = document.getElementById('size-filter').value;
+            const search = document.getElementById('search').value.toLowerCase();
+
+            filteredDatasets = allDatasets.filter(dataset => {
+                const matchesSource = source === 'all' || dataset.source === source;
+                const matchesTask = task === 'all' || dataset.task_type === task;
+                const matchesSize = size === 'all' || getSizeCategory(dataset.rows) === size;
+                const matchesSearch = dataset.name.toLowerCase().includes(search);
+
+                return matchesSource && matchesTask && matchesSize && matchesSearch;
+            });
+
+            renderDatasets(filteredDatasets);
+        }
+
+        // Event listeners
+        document.getElementById('source-filter').addEventListener('change', applyFilters);
+        document.getElementById('task-filter').addEventListener('change', applyFilters);
+        document.getElementById('size-filter').addEventListener('change', applyFilters);
+        document.getElementById('search').addEventListener('input', applyFilters);
+
+        // Helper functions
+        function getSizeCategory(rows) {
+            if (rows < 10000) return 'small';
+            if (rows < 100000) return 'medium';
+            return 'large';
+        }
+
+        function getSizeColor(category) {
+            const colors = {
+                'small': '#14B8A6',
+                'medium': '#F59E0B',
+                'large': '#EF4444'
+            };
+            return colors[category] || '#64748B';
+        }
+
+        function capitalizeFirst(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function updateStats() {
+            const classificationCount = allDatasets.filter(d => d.task_type === 'classification').length;
+            const regressionCount = allDatasets.filter(d => d.task_type === 'regression').length;
+
+            document.getElementById('total-datasets').textContent = allDatasets.length;
+            document.getElementById('classification-count').textContent = classificationCount;
+            document.getElementById('regression-count').textContent = regressionCount;
+        }
+
+        function updateVisibleCount(count) {
+            document.getElementById('visible-count').textContent = count;
+        }
+
+        // Initialize
+        loadDatasets();
+
+        console.log('Dataset Explorer loaded');
+    </script>
+
+</body>
+</html>

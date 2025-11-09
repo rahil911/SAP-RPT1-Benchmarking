@@ -1,0 +1,215 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Environments
+.env
+.env.local
+.env.*.local
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Data Files (Large datasets not tracked)
+code/results/raw/*
+code/results/processed/*
+code/results/reports/*
+!code/results/raw/.gitkeep
+!code/results/processed/.gitkeep
+!code/results/reports/.gitkeep
+
+# Datasets (Too large for repo)
+datasets/data/
+datasets/tabarena/data/*
+datasets/tabzilla/data/*
+datasets/openml-cc18/data/*
+!datasets/**/README.md
+!datasets/**/.gitkeep
+
+# Model Checkpoints (Large files)
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.pkl
+*.joblib
+checkpoints/
+saved_models/
+
+# Temporary Files
+*.tmp
+*.temp
+.~*
+~$*
+
+# Office Lock Files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Compiled Files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Docker
+.dockerignore
+
+# GitHub Projects Internal Data (Not for public repo)
+Github/SAP-RPT1/data/
+Github/SAP-RPT1/logs/
+Github/SAP-RPT1/deliverables/*.xlsx
+
+# Cache
+*.cache
+.cache/
+.pytest_cache/
+.ruff_cache/
+
+# Misc
+*.bak
+*.orig
+*.rej
+.mypy_cache
+
+# Keep these important files
+!.gitkeep
+!*.md
+!*.py
+!*.yml
+!*.yaml
+!*.json
+!*.svg
+!*.mmd
+!*.html
+!*.css
+!*.js
+!*.png
+!*.pdf
+!Dockerfile*
+!LICENSE
+!README.md

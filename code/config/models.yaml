@@ -1,0 +1,73 @@
+# Model Configuration
+# ====================
+
+models:
+  # SAP RPT-1 (Primary Model)
+  - name: 'sap-rpt1-small'
+    enabled: true
+    priority: 'high'
+    docker_image: 'sap-rpt1'
+
+  - name: 'sap-rpt1-large'
+    enabled: true
+    priority: 'high'
+    docker_image: 'sap-rpt1'
+
+  # Pretrained Competitors
+  - name: 'tabpfn'
+    enabled: true
+    priority: 'high'
+    docker_image: 'tabpfn'
+
+  - name: 'tabicl'
+    enabled: false  # Enable when implementation ready
+    priority: 'medium'
+    docker_image: 'tabicl'
+
+  # AutoML
+  - name: 'autogluon'
+    enabled: true
+    priority: 'medium'
+    docker_image: 'autogluon'
+
+  # Gradient Boosting Baselines
+  - name: 'xgboost'
+    enabled: true
+    priority: 'medium'
+    docker_image: 'baselines'
+
+  - name: 'catboost'
+    enabled: true
+    priority: 'medium'
+    docker_image: 'baselines'
+
+  - name: 'lightgbm'
+    enabled: true
+    priority: 'low'
+    docker_image: 'baselines'
+
+# Model Groups (for batch experiments)
+model_groups:
+  all:
+    - sap-rpt1-small
+    - sap-rpt1-large
+    - tabpfn
+    - autogluon
+    - xgboost
+    - catboost
+    - lightgbm
+
+  pretrained_only:
+    - sap-rpt1-small
+    - sap-rpt1-large
+    - tabpfn
+
+  baselines_only:
+    - xgboost
+    - catboost
+    - lightgbm
+
+  high_priority:
+    - sap-rpt1-small
+    - sap-rpt1-large
+    - tabpfn

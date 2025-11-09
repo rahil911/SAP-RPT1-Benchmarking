@@ -1,0 +1,127 @@
+version: '3.8'
+
+services:
+  # SAP RPT-1 Service (Python 3.11)
+  sap-rpt1:
+    build:
+      context: ..
+      dockerfile: docker/sap-rpt1.Dockerfile
+    container_name: sap-rpt1-benchmarking
+    volumes:
+      - ../datasets:/app/datasets:ro
+      - ../results:/app/results
+      - ../config:/app/config:ro
+      - huggingface-cache:/app/.cache/huggingface
+    environment:
+      - HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN}
+      - MODEL_NAME=sap-rpt1
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - benchmarking-network
+
+  # TabPFN Service (Python 3.9)
+  tabpfn:
+    build:
+      context: ..
+      dockerfile: docker/tabpfn.Dockerfile
+    container_name: tabpfn-benchmarking
+    volumes:
+      - ../datasets:/app/datasets:ro
+      - ../results:/app/results
+      - ../config:/app/config:ro
+    environment:
+      - MODEL_NAME=tabpfn
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - benchmarking-network
+
+  # TabICL Service (Python 3.9)
+  tabicl:
+    build:
+      context: ..
+      dockerfile: docker/tabicl.Dockerfile
+    container_name: tabicl-benchmarking
+    volumes:
+      - ../datasets:/app/datasets:ro
+      - ../results:/app/results
+      - ../config:/app/config:ro
+    environment:
+      - MODEL_NAME=tabicl
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - benchmarking-network
+
+  # AutoGluon Service (Python 3.10)
+  autogluon:
+    build:
+      context: ..
+      dockerfile: docker/autogluon.Dockerfile
+    container_name: autogluon-benchmarking
+    volumes:
+      - ../datasets:/app/datasets:ro
+      - ../results:/app/results
+      - ../config:/app/config:ro
+    environment:
+      - MODEL_NAME=autogluon
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - benchmarking-network
+
+  # Baselines Service (Python 3.10)
+  baselines:
+    build:
+      context: ..
+      dockerfile: docker/baselines.Dockerfile
+    container_name: baselines-benchmarking
+    volumes:
+      - ../datasets:/app/datasets:ro
+      - ../results:/app/results
+      - ../config:/app/config:ro
+    environment:
+      - MODEL_NAME=baselines
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - benchmarking-network
+
+volumes:
+  huggingface-cache:
+    driver: local
+
+networks:
+  benchmarking-network:
+    driver: bridge

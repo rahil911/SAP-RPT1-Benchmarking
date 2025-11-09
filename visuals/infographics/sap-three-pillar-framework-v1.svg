@@ -1,0 +1,197 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- Title -->
+  <text x="960" y="80" font-family="Helvetica Neue, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+    Three-Pillar Benchmarking Methodology
+  </text>
+  <text x="960" y="120" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#64748B" text-anchor="middle">
+    Comprehensive, Rigorous, and Reproducible
+  </text>
+
+  <!-- Pillar 1: Comprehensive Model Coverage -->
+  <g transform="translate(160, 220)">
+    <rect x="0" y="0" width="480" height="700" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="10"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="480" height="80" fill="#1E3A8A" rx="10"/>
+    <text x="240" y="50" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      PILLAR 1
+    </text>
+
+    <!-- Icon Area -->
+    <circle cx="240" cy="150" r="50" fill="#14B8A6" stroke="#1E3A8A" stroke-width="3"/>
+    <text x="240" y="165" font-family="Arial" font-size="48" fill="#F8FAFC" text-anchor="middle">⚙</text>
+
+    <!-- Title -->
+    <text x="240" y="250" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Comprehensive
+    </text>
+    <text x="240" y="280" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Model Coverage
+    </text>
+
+    <!-- Content -->
+    <g transform="translate(40, 320)">
+      <circle cx="8" cy="8" r="6" fill="#14B8A6"/>
+      <text x="25" y="15" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#1E3A8A" font-weight="600">
+        Foundation Models (3)
+      </text>
+      <text x="25" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#64748B">
+        SAP RPT-1, TabPFN v2.5, TabICL
+      </text>
+    </g>
+
+    <g transform="translate(40, 420)">
+      <circle cx="8" cy="8" r="6" fill="#14B8A6"/>
+      <text x="25" y="15" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#1E3A8A" font-weight="600">
+        AutoML Platform (1)
+      </text>
+      <text x="25" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#64748B">
+        AutoGluon Tabular
+      </text>
+    </g>
+
+    <g transform="translate(40, 520)">
+      <circle cx="8" cy="8" r="6" fill="#14B8A6"/>
+      <text x="25" y="15" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#1E3A8A" font-weight="600">
+        Traditional Baselines (3)
+      </text>
+      <text x="25" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#64748B">
+        XGBoost, CatBoost, LightGBM
+      </text>
+    </g>
+
+    <!-- Footer -->
+    <rect x="0" y="640" width="480" height="60" fill="#14B8A6" rx="10"/>
+    <text x="240" y="680" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      7 Models Total
+    </text>
+  </g>
+
+  <!-- Pillar 2: Diverse Dataset Coverage -->
+  <g transform="translate(720, 220)">
+    <rect x="0" y="0" width="480" height="700" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="10"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="480" height="80" fill="#1E3A8A" rx="10"/>
+    <text x="240" y="50" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      PILLAR 2
+    </text>
+
+    <!-- Icon Area -->
+    <circle cx="240" cy="150" r="50" fill="#14B8A6" stroke="#1E3A8A" stroke-width="3"/>
+    <text x="240" y="165" font-family="Arial" font-size="48" fill="#F8FAFC" text-anchor="middle">📊</text>
+
+    <!-- Title -->
+    <text x="240" y="250" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Diverse Dataset
+    </text>
+    <text x="240" y="280" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Coverage
+    </text>
+
+    <!-- Content -->
+    <g transform="translate(40, 320)">
+      <circle cx="8" cy="8" r="6" fill="#14B8A6"/>
+      <text x="25" y="15" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#1E3A8A" font-weight="600">
+        TabArena Benchmark
+      </text>
+      <text x="25" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#64748B">
+        51 datasets from living benchmark
+      </text>
+    </g>
+
+    <g transform="translate(40, 420)">
+      <circle cx="8" cy="8" r="6" fill="#14B8A6"/>
+      <text x="25" y="15" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#1E3A8A" font-weight="600">
+        TabZilla Benchmark
+      </text>
+      <text x="25" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#64748B">
+        20 datasets from NeurIPS 2023
+      </text>
+    </g>
+
+    <g transform="translate(40, 520)">
+      <circle cx="8" cy="8" r="6" fill="#14B8A6"/>
+      <text x="25" y="15" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#1E3A8A" font-weight="600">
+        Industry Domains
+      </text>
+      <text x="25" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#64748B">
+        Finance, Healthcare, Retail, Tech
+      </text>
+    </g>
+
+    <!-- Footer -->
+    <rect x="0" y="640" width="480" height="60" fill="#14B8A6" rx="10"/>
+    <text x="240" y="680" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      70+ Datasets Total
+    </text>
+  </g>
+
+  <!-- Pillar 3: Statistical Rigor -->
+  <g transform="translate(1280, 220)">
+    <rect x="0" y="0" width="480" height="700" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="10"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="480" height="80" fill="#1E3A8A" rx="10"/>
+    <text x="240" y="50" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      PILLAR 3
+    </text>
+
+    <!-- Icon Area -->
+    <circle cx="240" cy="150" r="50" fill="#14B8A6" stroke="#1E3A8A" stroke-width="3"/>
+    <text x="240" y="165" font-family="Arial" font-size="48" fill="#F8FAFC" text-anchor="middle">🔒</text>
+
+    <!-- Title -->
+    <text x="240" y="250" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Statistical Rigor &
+    </text>
+    <text x="240" y="280" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Reproducibility
+    </text>
+
+    <!-- Content -->
+    <g transform="translate(40, 320)">
+      <circle cx="8" cy="8" r="6" fill="#14B8A6"/>
+      <text x="25" y="15" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#1E3A8A" font-weight="600">
+        Statistical Tests
+      </text>
+      <text x="25" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#64748B">
+        Friedman, Nemenyi, Wilcoxon
+      </text>
+    </g>
+
+    <g transform="translate(40, 420)">
+      <circle cx="8" cy="8" r="6" fill="#14B8A6"/>
+      <text x="25" y="15" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#1E3A8A" font-weight="600">
+        Cross-Validation
+      </text>
+      <text x="25" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#64748B">
+        10-fold CV with stratification
+      </text>
+    </g>
+
+    <g transform="translate(40, 520)">
+      <circle cx="8" cy="8" r="6" fill="#14B8A6"/>
+      <text x="25" y="15" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#1E3A8A" font-weight="600">
+        Docker + GitHub
+      </text>
+      <text x="25" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#64748B">
+        Fully reproducible environments
+      </text>
+    </g>
+
+    <!-- Footer -->
+    <rect x="0" y="640" width="480" height="60" fill="#14B8A6" rx="10"/>
+    <text x="240" y="680" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      Publication-Quality
+    </text>
+  </g>
+
+  <!-- Bottom Note -->
+  <text x="960" y="1020" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle" font-style="italic">
+    Source: UW MSIM Team Analysis, SAP RPT-1 Benchmarking Proposal 2025
+  </text>
+</svg>

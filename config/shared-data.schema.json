@@ -1,0 +1,1415 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SAP RPT-1 Project Shared Data Contract",
+  "description": "Single source of truth created by Research Agent, consumed by all downstream agents",
+  "version": "1.0.0",
+  "created_by": "Research Agent (Phase 0)",
+  "consumed_by": [
+    "Agent 1 (Content)",
+    "Agent 2 (Visuals)",
+    "Agent 3 (Interactive)",
+    "Agent 4 (Code)",
+    "Agent 5 (GitHub)"
+  ],
+  "critical_note": "ALL team data MUST come from Knowledge Graph API. NO fabrication allowed.",
+  "type": "object",
+  "required": [
+    "metadata",
+    "team",
+    "project",
+    "research_highlights",
+    "stakeholders",
+    "timeline",
+    "models",
+    "datasets",
+    "compute",
+    "design_system",
+    "citations"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "File metadata and versioning",
+      "required": [
+        "version",
+        "created_at",
+        "created_by",
+        "kg_api_queried_at",
+        "kg_api_url"
+      ],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "Semantic version (e.g., 1.0.0)"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of creation"
+        },
+        "created_by": {
+          "type": "string",
+          "enum": [
+            "Research Agent"
+          ],
+          "description": "Agent that created this file"
+        },
+        "kg_api_queried_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When Knowledge Graph API was queried"
+        },
+        "kg_api_url": {
+          "type": "string",
+          "const": "https://kg-student-backend.ambitiouswave-220155c4.eastus2.azurecontainerapps.io",
+          "description": "Knowledge Graph API base URL"
+        },
+        "kg_api_status": {
+          "type": "string",
+          "enum": [
+            "success",
+            "cached_fallback"
+          ],
+          "description": "Whether fresh API data or cached fallback"
+        }
+      }
+    },
+    "team": {
+      "type": "object",
+      "description": "Team information from Knowledge Graph API - 100% RAG, no fabrication",
+      "required": [
+        "total_members",
+        "institution",
+        "program",
+        "members",
+        "team_assignments"
+      ],
+      "properties": {
+        "total_members": {
+          "type": "integer",
+          "const": 4,
+          "description": "Total team size"
+        },
+        "institution": {
+          "type": "string",
+          "const": "University of Washington",
+          "description": "Academic institution"
+        },
+        "program": {
+          "type": "string",
+          "const": "Master of Science in Information Management",
+          "description": "Graduate program"
+        },
+        "members": {
+          "type": "array",
+          "description": "All team members with complete profiles from KG API",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "title",
+              "experience_years",
+              "match_score",
+              "primary_role",
+              "core_skills",
+              "key_achievements",
+              "past_companies",
+              "expertise_areas",
+              "recommended_for"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "member_1",
+                  "member_2",
+                  "member_3",
+                  "member_4"
+                ],
+                "description": "Canonical member ID from KG"
+              },
+              "name": {
+                "type": "string",
+                "enum": [
+                  "Rahil M. Harihar",
+                  "Siddarth Bhave",
+                  "Mathew Jerry Meleth",
+                  "Shreyas B Subramanya"
+                ],
+                "description": "EXACT name from Knowledge Graph (spelling matters)"
+              },
+              "title": {
+                "type": "string",
+                "description": "Current professional title from KG"
+              },
+              "experience_years": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Total years of professional experience"
+              },
+              "match_score": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100,
+                "description": "Project match score from team-matching.md"
+              },
+              "primary_role": {
+                "type": "string",
+                "description": "Primary role for this project"
+              },
+              "core_skills": {
+                "type": "array",
+                "description": "Core technical skills from KG",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "key_achievements": {
+                "type": "array",
+                "description": "QUANTIFIED achievements from KG (must include metrics)",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "description",
+                    "metric"
+                  ],
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "description": "Achievement description"
+                    },
+                    "metric": {
+                      "type": "string",
+                      "description": "MUST contain quantified metric (e.g., '35% reduction', '$1M savings')"
+                    }
+                  }
+                },
+                "minItems": 1
+              },
+              "past_companies": {
+                "type": "array",
+                "description": "Previous employers from KG",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "expertise_areas": {
+                "type": "array",
+                "description": "Domain expertise areas",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "recommended_for": {
+                "type": "array",
+                "description": "Project responsibilities recommendations",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "gpa": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 4.0,
+                "description": "Current program GPA (if available in KG)"
+              },
+              "linkedin_url": {
+                "type": "string",
+                "format": "uri",
+                "description": "LinkedIn profile URL (if available)"
+              },
+              "github_url": {
+                "type": "string",
+                "format": "uri",
+                "description": "GitHub profile URL (if available)"
+              }
+            }
+          }
+        },
+        "team_assignments": {
+          "type": "object",
+          "description": "Role assignments for this project",
+          "required": [
+            "product_lead",
+            "technical_lead",
+            "research_lead",
+            "operations_lead"
+          ],
+          "properties": {
+            "product_lead": {
+              "type": "string",
+              "description": "Member name assigned to product management"
+            },
+            "technical_lead": {
+              "type": "string",
+              "description": "Member name assigned to technical architecture"
+            },
+            "research_lead": {
+              "type": "string",
+              "description": "Member name assigned to research & analysis"
+            },
+            "operations_lead": {
+              "type": "string",
+              "description": "Member name assigned to operations & coordination"
+            }
+          }
+        },
+        "team_relationships": {
+          "type": "array",
+          "description": "Special relationships between team members",
+          "items": {
+            "type": "object",
+            "required": [
+              "members",
+              "relationship_type"
+            ],
+            "properties": {
+              "members": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 2
+              },
+              "relationship_type": {
+                "type": "string",
+                "enum": [
+                  "co-founders",
+                  "alma_mater",
+                  "previous_colleagues"
+                ],
+                "description": "Type of relationship"
+              },
+              "context": {
+                "type": "string",
+                "description": "Additional context about relationship"
+              }
+            }
+          }
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "description": "High-level project information",
+      "required": [
+        "title",
+        "sponsor",
+        "mission",
+        "strategic_value",
+        "deliverables_overview",
+        "quality_standard",
+        "target_conferences"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "const": "SAP RPT-1 Benchmarking Study",
+          "description": "Project title"
+        },
+        "sponsor": {
+          "type": "object",
+          "required": [
+            "name",
+            "division",
+            "contact_info"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "SAP",
+              "description": "Sponsor company name"
+            },
+            "division": {
+              "type": "string",
+              "const": "SAP AI Foundation",
+              "description": "Sponsoring division"
+            },
+            "contact_info": {
+              "type": "string",
+              "description": "Primary contact information or reference to stakeholders section"
+            }
+          }
+        },
+        "mission": {
+          "type": "string",
+          "description": "Project mission statement (1-2 sentences)"
+        },
+        "strategic_value": {
+          "type": "array",
+          "description": "Strategic value propositions for SAP",
+          "items": {
+            "type": "object",
+            "required": [
+              "value",
+              "description"
+            ],
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "Value proposition title"
+              },
+              "description": {
+                "type": "string",
+                "description": "Detailed explanation"
+              }
+            }
+          },
+          "minItems": 3
+        },
+        "deliverables_overview": {
+          "type": "array",
+          "description": "Summary of all project deliverables",
+          "items": {
+            "type": "object",
+            "required": [
+              "deliverable",
+              "format",
+              "target_audience"
+            ],
+            "properties": {
+              "deliverable": {
+                "type": "string",
+                "description": "Deliverable name"
+              },
+              "format": {
+                "type": "string",
+                "description": "File format (e.g., PPTX, PDF, HTML)"
+              },
+              "target_audience": {
+                "type": "string",
+                "description": "Primary audience"
+              }
+            }
+          },
+          "minItems": 4
+        },
+        "quality_standard": {
+          "type": "string",
+          "const": "BCG/McKinsey caliber (9.5/10)",
+          "description": "Target quality level"
+        },
+        "target_conferences": {
+          "type": "array",
+          "description": "Target academic conferences for publication",
+          "items": {
+            "type": "string",
+            "enum": [
+              "NeurIPS 2026",
+              "ICML 2026",
+              "ICLR 2027"
+            ]
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "research_highlights": {
+      "type": "object",
+      "description": "Key findings from research phase",
+      "required": [
+        "sap_rpt_overview",
+        "competitive_landscape",
+        "methodology_framework",
+        "compute_strategy",
+        "dataset_strategy"
+      ],
+      "properties": {
+        "sap_rpt_overview": {
+          "type": "object",
+          "required": [
+            "description",
+            "key_innovations",
+            "performance_claims",
+            "limitations"
+          ],
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "1-2 paragraph overview of SAP RPT-1"
+            },
+            "key_innovations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 3,
+              "description": "Key technical innovations"
+            },
+            "performance_claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "claim",
+                  "metric",
+                  "source"
+                ],
+                "properties": {
+                  "claim": {
+                    "type": "string",
+                    "description": "Performance claim"
+                  },
+                  "metric": {
+                    "type": "string",
+                    "description": "Quantified metric"
+                  },
+                  "source": {
+                    "type": "string",
+                    "description": "Citation source"
+                  }
+                }
+              },
+              "minItems": 1
+            },
+            "limitations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "description": "Known limitations to investigate"
+            }
+          }
+        },
+        "competitive_landscape": {
+          "type": "array",
+          "description": "Competing models and their characteristics",
+          "items": {
+            "type": "object",
+            "required": [
+              "model_name",
+              "category",
+              "key_strengths",
+              "known_performance"
+            ],
+            "properties": {
+              "model_name": {
+                "type": "string",
+                "description": "Model/system name"
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "Foundation Model",
+                  "AutoML Platform",
+                  "Traditional Baseline",
+                  "Gradient Boosting"
+                ],
+                "description": "Model category"
+              },
+              "key_strengths": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "known_performance": {
+                "type": "string",
+                "description": "Known performance characteristics"
+              }
+            }
+          },
+          "minItems": 5
+        },
+        "methodology_framework": {
+          "type": "object",
+          "required": [
+            "statistical_tests",
+            "evaluation_metrics",
+            "experimental_protocol"
+          ],
+          "properties": {
+            "statistical_tests": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "description": "Statistical tests to use (e.g., Friedman, Nemenyi)"
+            },
+            "evaluation_metrics": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 3,
+              "description": "Evaluation metrics (e.g., ROC-AUC, accuracy, F1)"
+            },
+            "experimental_protocol": {
+              "type": "string",
+              "description": "Overview of experimental protocol"
+            }
+          }
+        },
+        "compute_strategy": {
+          "type": "object",
+          "required": [
+            "primary_resource",
+            "budget_scenario",
+            "estimated_hours",
+            "estimated_cost"
+          ],
+          "properties": {
+            "primary_resource": {
+              "type": "string",
+              "enum": [
+                "UW Tillicum",
+                "AWS Research Credits",
+                "Azure for Students"
+              ],
+              "description": "Primary compute resource"
+            },
+            "budget_scenario": {
+              "type": "string",
+              "enum": [
+                "minimal",
+                "moderate",
+                "comprehensive"
+              ],
+              "description": "Selected budget scenario"
+            },
+            "estimated_hours": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Total GPU hours estimated"
+            },
+            "estimated_cost": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Total cost in USD"
+            }
+          }
+        },
+        "dataset_strategy": {
+          "type": "object",
+          "required": [
+            "primary_benchmark",
+            "total_datasets",
+            "coverage"
+          ],
+          "properties": {
+            "primary_benchmark": {
+              "type": "string",
+              "enum": [
+                "TabArena",
+                "TabZilla",
+                "Mixed"
+              ],
+              "description": "Primary benchmark suite"
+            },
+            "total_datasets": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Total number of datasets"
+            },
+            "coverage": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Domain coverage (e.g., finance, healthcare, retail)"
+            }
+          }
+        }
+      }
+    },
+    "stakeholders": {
+      "type": "object",
+      "description": "SAP stakeholder intelligence from research",
+      "required": [
+        "primary_contacts",
+        "organizational_context",
+        "outreach_strategy"
+      ],
+      "properties": {
+        "primary_contacts": {
+          "type": "array",
+          "description": "Key SAP contacts with complete profiles",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "title",
+              "division",
+              "relevance",
+              "contact_approach"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Full name"
+              },
+              "title": {
+                "type": "string",
+                "description": "Job title"
+              },
+              "division": {
+                "type": "string",
+                "description": "SAP division/department"
+              },
+              "relevance": {
+                "type": "string",
+                "description": "Why this person is relevant to the project"
+              },
+              "contact_approach": {
+                "type": "string",
+                "description": "Recommended approach strategy"
+              },
+              "linkedin_url": {
+                "type": "string",
+                "format": "uri",
+                "description": "LinkedIn profile (if available)"
+              },
+              "email": {
+                "type": "string",
+                "format": "email",
+                "description": "Email address (if public/available)"
+              },
+              "uw_affiliation": {
+                "type": "boolean",
+                "description": "Whether person has UW affiliation (golden ticket)"
+              }
+            }
+          },
+          "minItems": 3
+        },
+        "organizational_context": {
+          "type": "string",
+          "description": "SAP AI Foundation organizational structure summary"
+        },
+        "outreach_strategy": {
+          "type": "object",
+          "required": [
+            "timeline",
+            "key_milestones",
+            "value_propositions"
+          ],
+          "properties": {
+            "timeline": {
+              "type": "string",
+              "description": "Week-by-week outreach timeline"
+            },
+            "key_milestones": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "week",
+                  "milestone",
+                  "action"
+                ],
+                "properties": {
+                  "week": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                  },
+                  "milestone": {
+                    "type": "string"
+                  },
+                  "action": {
+                    "type": "string"
+                  }
+                }
+              },
+              "minItems": 3
+            },
+            "value_propositions": {
+              "type": "array",
+              "description": "Role-specific value propositions",
+              "items": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "value_prop"
+                ],
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "description": "Stakeholder role type"
+                  },
+                  "value_prop": {
+                    "type": "string",
+                    "description": "Tailored value proposition"
+                  }
+                }
+              },
+              "minItems": 3
+            }
+          }
+        }
+      }
+    },
+    "timeline": {
+      "type": "object",
+      "description": "12-week project timeline",
+      "required": [
+        "start_date",
+        "end_date",
+        "total_weeks",
+        "phases",
+        "milestones"
+      ],
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Project start date (YYYY-MM-DD)"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Project end date (YYYY-MM-DD)"
+        },
+        "total_weeks": {
+          "type": "integer",
+          "const": 12,
+          "description": "Total project duration in weeks"
+        },
+        "phases": {
+          "type": "array",
+          "description": "Project phases",
+          "items": {
+            "type": "object",
+            "required": [
+              "phase_name",
+              "weeks",
+              "description",
+              "deliverables"
+            ],
+            "properties": {
+              "phase_name": {
+                "type": "string",
+                "description": "Phase name"
+              },
+              "weeks": {
+                "type": "string",
+                "pattern": "^Week \\d+-\\d+$",
+                "description": "Week range (e.g., 'Week 1-2')"
+              },
+              "description": {
+                "type": "string",
+                "description": "Phase description"
+              },
+              "deliverables": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            }
+          },
+          "minItems": 4
+        },
+        "milestones": {
+          "type": "array",
+          "description": "Major project milestones",
+          "items": {
+            "type": "object",
+            "required": [
+              "milestone_id",
+              "name",
+              "week",
+              "description"
+            ],
+            "properties": {
+              "milestone_id": {
+                "type": "string",
+                "pattern": "^M\\d+$",
+                "description": "Milestone ID (e.g., M1, M2)"
+              },
+              "name": {
+                "type": "string",
+                "description": "Milestone name"
+              },
+              "week": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12,
+                "description": "Target week"
+              },
+              "description": {
+                "type": "string",
+                "description": "Milestone description"
+              }
+            }
+          },
+          "minItems": 5
+        }
+      }
+    },
+    "models": {
+      "type": "object",
+      "description": "Models to benchmark with complete specifications",
+      "required": [
+        "foundation_models",
+        "automl_platforms",
+        "traditional_baselines",
+        "total_count"
+      ],
+      "properties": {
+        "foundation_models": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "category",
+              "parameters",
+              "github_url",
+              "python_version",
+              "key_features"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Model name"
+              },
+              "category": {
+                "type": "string",
+                "const": "Foundation Model"
+              },
+              "parameters": {
+                "type": "string",
+                "description": "Model size (e.g., '172M parameters')"
+              },
+              "github_url": {
+                "type": "string",
+                "format": "uri",
+                "description": "GitHub repository URL"
+              },
+              "python_version": {
+                "type": "string",
+                "pattern": "^\\d+\\.\\d+\\+?$",
+                "description": "Required Python version (e.g., '3.11', '3.9+')"
+              },
+              "key_features": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "docker_image": {
+                "type": "string",
+                "description": "Docker image name for isolation"
+              }
+            }
+          },
+          "minItems": 3
+        },
+        "automl_platforms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "category",
+              "github_url",
+              "python_version",
+              "key_features"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string",
+                "const": "AutoML Platform"
+              },
+              "github_url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "python_version": {
+                "type": "string",
+                "pattern": "^\\d+\\.\\d+\\+?$"
+              },
+              "key_features": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "traditional_baselines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "category",
+              "library",
+              "python_version"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "Gradient Boosting",
+                  "Traditional Baseline"
+                ]
+              },
+              "library": {
+                "type": "string",
+                "description": "Python library (e.g., 'xgboost', 'sklearn')"
+              },
+              "python_version": {
+                "type": "string",
+                "pattern": "^\\d+\\.\\d+\\+?$"
+              }
+            }
+          },
+          "minItems": 3
+        },
+        "total_count": {
+          "type": "integer",
+          "minimum": 7,
+          "description": "Total number of models to benchmark"
+        }
+      }
+    },
+    "datasets": {
+      "type": "object",
+      "description": "Benchmark datasets catalog",
+      "required": [
+        "primary_benchmark",
+        "datasets_list",
+        "total_count",
+        "estimated_size_gb"
+      ],
+      "properties": {
+        "primary_benchmark": {
+          "type": "string",
+          "enum": [
+            "TabArena",
+            "TabZilla",
+            "Mixed"
+          ],
+          "description": "Primary benchmark suite"
+        },
+        "datasets_list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "source",
+              "task_type",
+              "rows",
+              "columns"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Dataset name"
+              },
+              "source": {
+                "type": "string",
+                "enum": [
+                  "TabArena",
+                  "TabZilla",
+                  "OpenML-CC18"
+                ],
+                "description": "Dataset source"
+              },
+              "task_type": {
+                "type": "string",
+                "enum": [
+                  "classification",
+                  "regression"
+                ],
+                "description": "Task type"
+              },
+              "rows": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Number of rows"
+              },
+              "columns": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Number of features"
+              },
+              "classes": {
+                "type": "integer",
+                "minimum": 2,
+                "description": "Number of classes (for classification)"
+              },
+              "missing_percentage": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "description": "Percentage of missing values"
+              },
+              "openml_task_id": {
+                "type": "integer",
+                "description": "OpenML task ID (if applicable)"
+              }
+            }
+          },
+          "minItems": 10
+        },
+        "total_count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Total number of datasets"
+        },
+        "estimated_size_gb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total estimated storage in GB"
+        }
+      }
+    },
+    "compute": {
+      "type": "object",
+      "description": "Compute resources and budget",
+      "required": [
+        "primary_resource",
+        "backup_resources",
+        "estimated_hours",
+        "estimated_cost"
+      ],
+      "properties": {
+        "primary_resource": {
+          "type": "object",
+          "required": [
+            "name",
+            "hardware",
+            "cost_per_hour",
+            "availability"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "enum": [
+                "UW Tillicum",
+                "AWS Research Credits",
+                "Azure for Students"
+              ],
+              "description": "Primary compute resource name"
+            },
+            "hardware": {
+              "type": "string",
+              "description": "Hardware specifications (e.g., 'H200 80GB GPUs')"
+            },
+            "cost_per_hour": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Cost per hour in USD"
+            },
+            "availability": {
+              "type": "string",
+              "description": "Availability status/timeline"
+            }
+          }
+        },
+        "backup_resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "hardware",
+              "cost_per_hour"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "hardware": {
+                "type": "string"
+              },
+              "cost_per_hour": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "estimated_hours": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total GPU hours estimated"
+        },
+        "estimated_cost": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total cost in USD"
+        }
+      }
+    },
+    "design_system": {
+      "type": "object",
+      "description": "Design system from claude.md and INTEGRATION_CONTRACT.md",
+      "required": [
+        "colors",
+        "typography",
+        "layout_principles"
+      ],
+      "properties": {
+        "colors": {
+          "type": "object",
+          "required": [
+            "primary",
+            "secondary",
+            "accent"
+          ],
+          "properties": {
+            "primary": {
+              "type": "object",
+              "required": [
+                "name",
+                "hex",
+                "usage"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "const": "Navy Blue"
+                },
+                "hex": {
+                  "type": "string",
+                  "const": "#1E3A8A"
+                },
+                "usage": {
+                  "type": "string",
+                  "const": "Main headings, key messages, CTAs"
+                }
+              }
+            },
+            "secondary": {
+              "type": "object",
+              "required": [
+                "name",
+                "hex",
+                "usage"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "const": "Slate Gray"
+                },
+                "hex": {
+                  "type": "string",
+                  "const": "#64748B"
+                },
+                "usage": {
+                  "type": "string",
+                  "const": "Body text, supporting elements, borders"
+                }
+              }
+            },
+            "accent": {
+              "type": "object",
+              "required": [
+                "name",
+                "hex",
+                "usage"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "const": "Teal"
+                },
+                "hex": {
+                  "type": "string",
+                  "const": "#14B8A6"
+                },
+                "usage": {
+                  "type": "string",
+                  "const": "Accents, highlights, data points, interactive elements"
+                }
+              }
+            }
+          }
+        },
+        "typography": {
+          "type": "object",
+          "required": [
+            "font_family",
+            "hierarchy"
+          ],
+          "properties": {
+            "font_family": {
+              "type": "string",
+              "const": "Helvetica Neue, Arial, sans-serif"
+            },
+            "hierarchy": {
+              "type": "object",
+              "required": [
+                "main_title",
+                "section_headers",
+                "body_text"
+              ],
+              "properties": {
+                "main_title": {
+                  "type": "string",
+                  "const": "Helvetica Bold, 28pt, Navy Blue"
+                },
+                "section_headers": {
+                  "type": "string",
+                  "const": "Helvetica Bold, 24pt, Navy Blue"
+                },
+                "body_text": {
+                  "type": "string",
+                  "const": "Helvetica Regular, 12pt, Slate Gray"
+                }
+              }
+            }
+          }
+        },
+        "layout_principles": {
+          "type": "object",
+          "required": [
+            "white_space_rule",
+            "grid_system",
+            "one_message_per_slide"
+          ],
+          "properties": {
+            "white_space_rule": {
+              "type": "string",
+              "const": "40-50% of any slide/page should be empty space"
+            },
+            "grid_system": {
+              "type": "string",
+              "const": "12-column grid for consistency"
+            },
+            "one_message_per_slide": {
+              "type": "boolean",
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "citations": {
+      "type": "object",
+      "description": "Key citations and references",
+      "required": [
+        "papers",
+        "github_repositories",
+        "datasets"
+      ],
+      "properties": {
+        "papers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "citation_key",
+              "authors",
+              "title",
+              "venue",
+              "year",
+              "url"
+            ],
+            "properties": {
+              "citation_key": {
+                "type": "string",
+                "pattern": "^[a-z]+\\d{4}[a-z]*$",
+                "description": "Citation key (e.g., 'spinaci2025', 'hollmann2025')"
+              },
+              "authors": {
+                "type": "string",
+                "description": "Author list"
+              },
+              "title": {
+                "type": "string",
+                "description": "Paper title"
+              },
+              "venue": {
+                "type": "string",
+                "description": "Conference/journal (e.g., 'NeurIPS 2025', 'Nature')"
+              },
+              "year": {
+                "type": "integer",
+                "minimum": 2020,
+                "maximum": 2026
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "arXiv or DOI URL"
+              }
+            }
+          },
+          "minItems": 5
+        },
+        "github_repositories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "url",
+              "description"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          },
+          "minItems": 3
+        },
+        "datasets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "source",
+              "url"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string",
+                "enum": [
+                  "TabArena",
+                  "TabZilla",
+                  "OpenML"
+                ]
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "minItems": 3
+        }
+      }
+    }
+  }
+}

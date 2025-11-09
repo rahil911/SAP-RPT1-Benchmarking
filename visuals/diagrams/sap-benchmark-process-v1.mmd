@@ -1,0 +1,42 @@
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#1E3A8A',
+    'primaryTextColor': '#F8FAFC',
+    'primaryBorderColor': '#64748B',
+    'lineColor': '#14B8A6',
+    'secondaryColor': '#64748B',
+    'tertiaryColor': '#F8FAFC',
+    'fontSize': '14px',
+    'fontFamily': 'Helvetica Neue, Arial, sans-serif'
+  }
+}}%%
+
+flowchart LR
+    A[Download Datasets<br/>TabArena + TabZilla<br/>71 datasets total]
+
+    A --> B[Preprocess Data<br/>Missing values<br/>Encoding<br/>Normalization]
+
+    B --> C{Select Model}
+
+    C -->|Foundation Model| D[SAP RPT-1<br/>TabPFN v2.5<br/>TabICL]
+    C -->|AutoML| E[AutoGluon<br/>Ensemble methods]
+    C -->|Baseline| F[XGBoost<br/>CatBoost<br/>LightGBM]
+
+    D --> G[Zero-Shot<br/>Prediction<br/>No training]
+    E --> H[AutoML Training<br/>Time budget:<br/>4 hours]
+    F --> I[Hyperparameter<br/>Optimization<br/>Optuna/Bayesian]
+
+    G --> J[10-Fold<br/>Cross-Validation]
+    H --> J
+    I --> J
+
+    J --> K[Calculate Metrics<br/>ROC-AUC, Accuracy<br/>F1-Score, Log Loss<br/>Runtime, Memory]
+
+    K --> L[Statistical Tests<br/>Friedman Test<br/>Nemenyi Post-hoc<br/>Wilcoxon Signed-Rank]
+
+    L --> M[Generate Results<br/>Critical Difference<br/>Diagrams<br/>Performance Tables]
+
+    style A fill:#64748B,stroke:#1E3A8A,color:#F8FAFC,stroke-width:2px
+    style C fill:#1E3A8A,stroke:#64748B,color:#F8FAFC,stroke-width:3px
+    style M fill:#14B8A6,stroke:#1E3A8A,color:#1F2937,stroke-width:3px

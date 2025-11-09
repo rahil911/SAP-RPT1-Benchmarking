@@ -1,0 +1,213 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- Title -->
+  <text x="960" y="80" font-family="Helvetica Neue, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+    Strategic Value for SAP
+  </text>
+  <text x="960" y="120" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#64748B" text-anchor="middle">
+    Independent Academic Benchmarking Delivers Multifaceted ROI
+  </text>
+
+  <!-- Card 1: Independent Validation -->
+  <g transform="translate(100, 200)">
+    <rect x="0" y="0" width="380" height="300" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="12"/>
+    <circle cx="190" cy="60" r="35" fill="#14B8A6"/>
+    <text x="190" y="72" font-family="Arial" font-size="36" fill="#F8FAFC" text-anchor="middle">✓</text>
+
+    <text x="190" y="130" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Independent Validation
+    </text>
+
+    <text x="190" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      First third-party academic
+    </text>
+    <text x="190" y="195" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      benchmarking of SAP RPT-1
+    </text>
+    <text x="190" y="220" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      from top-tier institution
+    </text>
+
+    <text x="190" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      $50K+ Value
+    </text>
+    <text x="190" y="283" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">
+      Consulting equivalent
+    </text>
+  </g>
+
+  <!-- Card 2: Competitive Intelligence -->
+  <g transform="translate(520, 200)">
+    <rect x="0" y="0" width="380" height="300" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="12"/>
+    <circle cx="190" cy="60" r="35" fill="#14B8A6"/>
+    <text x="190" y="72" font-family="Arial" font-size="36" fill="#F8FAFC" text-anchor="middle">📊</text>
+
+    <text x="190" y="130" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Competitive Positioning
+    </text>
+
+    <text x="190" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Statistical comparison vs.
+    </text>
+    <text x="190" y="195" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      TabPFN, TabICL, AutoGluon
+    </text>
+    <text x="190" y="220" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      across 70+ datasets
+    </text>
+
+    <text x="190" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      Strategic Insights
+    </text>
+    <text x="190" y="283" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">
+      Data-driven positioning
+    </text>
+  </g>
+
+  <!-- Card 3: Use Case Guidance -->
+  <g transform="translate(940, 200)">
+    <rect x="0" y="0" width="380" height="300" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="12"/>
+    <circle cx="190" cy="60" r="35" fill="#14B8A6"/>
+    <text x="190" y="72" font-family="Arial" font-size="36" fill="#F8FAFC" text-anchor="middle">🎯</text>
+
+    <text x="190" y="130" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Use Case Clarity
+    </text>
+
+    <text x="190" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Identify optimal datasets
+    </text>
+    <text x="190" y="195" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      and scenarios where RPT-1
+    </text>
+    <text x="190" y="220" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      excels vs. underperforms
+    </text>
+
+    <text x="190" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      Go-to-Market
+    </text>
+    <text x="190" y="283" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">
+      Customer guidance
+    </text>
+  </g>
+
+  <!-- Card 4: Publication Impact -->
+  <g transform="translate(1360, 200)">
+    <rect x="0" y="0" width="380" height="300" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="12"/>
+    <circle cx="190" cy="60" r="35" fill="#14B8A6"/>
+    <text x="190" y="72" font-family="Arial" font-size="36" fill="#F8FAFC" text-anchor="middle">🏆</text>
+
+    <text x="190" y="130" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Publication Impact
+    </text>
+
+    <text x="190" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      NeurIPS/ICML publication
+    </text>
+    <text x="190" y="195" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      raises SAP RPT-1's profile
+    </text>
+    <text x="190" y="220" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      in ML research community
+    </text>
+
+    <text x="190" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      Academic Prestige
+    </text>
+    <text x="190" y="283" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">
+      Peer-reviewed research
+    </text>
+  </g>
+
+  <!-- Card 5: Feature Roadmap -->
+  <g transform="translate(310, 550)">
+    <rect x="0" y="0" width="380" height="300" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="12"/>
+    <circle cx="190" cy="60" r="35" fill="#14B8A6"/>
+    <text x="190" y="72" font-family="Arial" font-size="36" fill="#F8FAFC" text-anchor="middle">🔧</text>
+
+    <text x="190" y="130" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Feature Roadmap Insights
+    </text>
+
+    <text x="190" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Identify optimization
+    </text>
+    <text x="190" y="195" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      opportunities and feature
+    </text>
+    <text x="190" y="220" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      gaps through analysis
+    </text>
+
+    <text x="190" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      Product Development
+    </text>
+    <text x="190" y="283" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">
+      Informed R&D priorities
+    </text>
+  </g>
+
+  <!-- Card 6: Talent Pipeline -->
+  <g transform="translate(730, 550)">
+    <rect x="0" y="0" width="380" height="300" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="12"/>
+    <circle cx="190" cy="60" r="35" fill="#14B8A6"/>
+    <text x="190" y="72" font-family="Arial" font-size="36" fill="#F8FAFC" text-anchor="middle">👥</text>
+
+    <text x="190" y="130" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Talent Pipeline
+    </text>
+
+    <text x="190" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Engage UW MSIM team
+    </text>
+    <text x="190" y="195" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      with deep AI/ML expertise
+    </text>
+    <text x="190" y="220" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      for future recruiting
+    </text>
+
+    <text x="190" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      Recruiting Opportunity
+    </text>
+    <text x="190" y="283" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">
+      14+ years experience
+    </text>
+  </g>
+
+  <!-- Card 7: Enterprise Credibility -->
+  <g transform="translate(1150, 550)">
+    <rect x="0" y="0" width="380" height="300" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="12"/>
+    <circle cx="190" cy="60" r="35" fill="#14B8A6"/>
+    <text x="190" y="72" font-family="Arial" font-size="36" fill="#F8FAFC" text-anchor="middle">🏢</text>
+
+    <text x="190" y="130" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Enterprise Credibility
+    </text>
+
+    <text x="190" y="170" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Third-party validation
+    </text>
+    <text x="190" y="195" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      supports enterprise adoption
+    </text>
+    <text x="190" y="220" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      and reduces buyer risk
+    </text>
+
+    <text x="190" y="260" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      Sales Enablement
+    </text>
+    <text x="190" y="283" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">
+      Trust signal for buyers
+    </text>
+  </g>
+
+  <!-- Bottom Note -->
+  <text x="960" y="1020" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle" font-style="italic">
+    Source: UW MSIM Team Analysis, SAP RPT-1 Benchmarking Proposal 2025
+  </text>
+</svg>

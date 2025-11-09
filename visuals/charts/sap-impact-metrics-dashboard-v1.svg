@@ -1,0 +1,199 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- Title -->
+  <text x="960" y="60" font-family="Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+    Expected Impact Metrics
+  </text>
+  <text x="960" y="95" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+    Quantified Value Proposition for SAP
+  </text>
+
+  <!-- Row 1: Market Validation -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="530" height="200" fill="#FFFFFF" stroke="#14B8A6" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="530" height="60" fill="#14B8A6" rx="10"/>
+    <text x="265" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      Market Validation
+    </text>
+
+    <text x="265" y="110" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      $50K+
+    </text>
+    <text x="265" y="145" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Consulting Equivalent Value
+    </text>
+    <text x="265" y="175" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle" font-style="italic">
+      First independent academic validation
+    </text>
+  </g>
+
+  <!-- Row 1: Publication Impact -->
+  <g transform="translate(690, 150)">
+    <rect x="0" y="0" width="530" height="200" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="530" height="60" fill="#1E3A8A" rx="10"/>
+    <text x="265" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      Publication Impact
+    </text>
+
+    <text x="265" y="110" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      Top-Tier
+    </text>
+    <text x="265" y="145" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      NeurIPS / ICML 2026
+    </text>
+    <text x="265" y="175" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle" font-style="italic">
+      Peer-reviewed academic research
+    </text>
+  </g>
+
+  <!-- Row 1: Dataset Coverage -->
+  <g transform="translate(1280, 150)">
+    <rect x="0" y="0" width="530" height="200" fill="#FFFFFF" stroke="#64748B" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="530" height="60" fill="#64748B" rx="10"/>
+    <text x="265" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      Dataset Coverage
+    </text>
+
+    <text x="265" y="110" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="bold" fill="#64748B" text-anchor="middle">
+      70+
+    </text>
+    <text x="265" y="145" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Diverse Benchmark Datasets
+    </text>
+    <text x="265" y="175" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle" font-style="italic">
+      TabArena + TabZilla coverage
+    </text>
+  </g>
+
+  <!-- Row 2: Model Comparison -->
+  <g transform="translate(100, 400)">
+    <rect x="0" y="0" width="530" height="200" fill="#FFFFFF" stroke="#14B8A6" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="530" height="60" fill="#14B8A6" rx="10"/>
+    <text x="265" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      Model Comparison
+    </text>
+
+    <text x="265" y="110" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      7 Models
+    </text>
+    <text x="265" y="145" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Comprehensive Landscape
+    </text>
+    <text x="265" y="175" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle" font-style="italic">
+      Foundation + AutoML + Traditional
+    </text>
+  </g>
+
+  <!-- Row 2: Statistical Rigor -->
+  <g transform="translate(690, 400)">
+    <rect x="0" y="0" width="530" height="200" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="530" height="60" fill="#1E3A8A" rx="10"/>
+    <text x="265" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      Statistical Rigor
+    </text>
+
+    <text x="265" y="110" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      10-Fold CV
+    </text>
+    <text x="265" y="145" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Robust Validation Protocol
+    </text>
+    <text x="265" y="175" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle" font-style="italic">
+      Friedman + Nemenyi tests
+    </text>
+  </g>
+
+  <!-- Row 2: Reproducibility -->
+  <g transform="translate(1280, 400)">
+    <rect x="0" y="0" width="530" height="200" fill="#FFFFFF" stroke="#64748B" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="530" height="60" fill="#64748B" rx="10"/>
+    <text x="265" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      Reproducibility
+    </text>
+
+    <text x="265" y="110" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="bold" fill="#64748B" text-anchor="middle">
+      100%
+    </text>
+    <text x="265" y="145" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Fully Reproducible
+    </text>
+    <text x="265" y="175" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle" font-style="italic">
+      Docker + GitHub + REFORMS
+    </text>
+  </g>
+
+  <!-- Row 3: Team Expertise -->
+  <g transform="translate(100, 650)">
+    <rect x="0" y="0" width="530" height="200" fill="#FFFFFF" stroke="#14B8A6" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="530" height="60" fill="#14B8A6" rx="10"/>
+    <text x="265" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      Team Expertise
+    </text>
+
+    <text x="265" y="110" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="bold" fill="#14B8A6" text-anchor="middle">
+      14+ Years
+    </text>
+    <text x="265" y="145" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Combined Experience
+    </text>
+    <text x="265" y="175" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle" font-style="italic">
+      Fortune 500 + Startups + Academia
+    </text>
+  </g>
+
+  <!-- Row 3: Timeline -->
+  <g transform="translate(690, 650)">
+    <rect x="0" y="0" width="530" height="200" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="530" height="60" fill="#1E3A8A" rx="10"/>
+    <text x="265" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      Project Timeline
+    </text>
+
+    <text x="265" y="110" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      12 Weeks
+    </text>
+    <text x="265" y="145" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Nov 2025 - Jan 2026
+    </text>
+    <text x="265" y="175" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle" font-style="italic">
+      Rapid execution with quality
+    </text>
+  </g>
+
+  <!-- Row 3: Cost Efficiency -->
+  <g transform="translate(1280, 650)">
+    <rect x="0" y="0" width="530" height="200" fill="#FFFFFF" stroke="#64748B" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="530" height="60" fill="#64748B" rx="10"/>
+    <text x="265" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      Cost Efficiency
+    </text>
+
+    <text x="265" y="110" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="bold" fill="#64748B" text-anchor="middle">
+      94%
+    </text>
+    <text x="265" y="145" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Savings vs. Commercial
+    </text>
+    <text x="265" y="175" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle" font-style="italic">
+      Academic resources + credits
+    </text>
+  </g>
+
+  <!-- Bottom Summary -->
+  <g transform="translate(100, 900)">
+    <rect x="0" y="0" width="1720" height="100" fill="#1E3A8A" fill-opacity="0.1" stroke="#1E3A8A" stroke-width="3" rx="10"/>
+    <text x="860" y="35" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+      TOTAL IMPACT FOR SAP
+    </text>
+    <text x="860" y="68" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+      Independent academic validation + competitive intelligence + use case guidance + publication impact
+    </text>
+  </g>
+
+  <!-- Bottom Note -->
+  <text x="960" y="1040" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#64748B" text-anchor="middle" font-style="italic">
+    Source: UW MSIM Team Analysis, SAP RPT-1 Benchmarking Proposal 2025
+  </text>
+</svg>

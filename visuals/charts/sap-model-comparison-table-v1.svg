@@ -1,0 +1,192 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- Title -->
+  <text x="960" y="70" font-family="Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+    Model Comparison Matrix
+  </text>
+  <text x="960" y="105" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+    7 Models Across Key Dimensions
+  </text>
+
+  <!-- Table Header -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="1720" height="60" fill="#1E3A8A" rx="8"/>
+    <text x="180" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC">Model Name</text>
+    <text x="480" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC">Category</text>
+    <text x="750" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC">Training Paradigm</text>
+    <text x="1060" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC">Scalability</text>
+    <text x="1360" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC">Interpretability</text>
+    <text x="1620" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC">Status</text>
+  </g>
+
+  <!-- Row 1: SAP RPT-1 (Highlighted) -->
+  <g transform="translate(100, 210)">
+    <rect x="0" y="0" width="1720" height="100" fill="#14B8A6" fill-opacity="0.15" stroke="#14B8A6" stroke-width="3" rx="8"/>
+    <text x="20" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E3A8A">SAP RPT-1</text>
+    <text x="20" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#64748B">(ConTextTab)</text>
+
+    <text x="380" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" fill="#1E3A8A">Foundation Model</text>
+    <text x="380" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">Relational</text>
+
+    <text x="650" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" fill="#1E3A8A">Zero-Shot / Few-Shot</text>
+    <text x="650" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">In-context learning</text>
+
+    <text x="960" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" fill="#1E3A8A">Medium</text>
+    <text x="960" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">Best for small-medium</text>
+
+    <text x="1260" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" fill="#1E3A8A">Moderate</text>
+    <text x="1260" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">Semantic awareness</text>
+
+    <circle cx="1640" cy="30" r="8" fill="#10B981"/>
+    <text x="1560" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">Nov 2025</text>
+  </g>
+
+  <!-- Row 2: TabPFN v2.5 -->
+  <g transform="translate(100, 310)">
+    <rect x="0" y="0" width="1720" height="100" fill="#FFFFFF" stroke="#64748B" stroke-width="1" rx="8"/>
+    <text x="20" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" fill="#1E3A8A">TabPFN v2.5</text>
+    <text x="20" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">Nature 2025</text>
+
+    <text x="380" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Foundation Model</text>
+    <text x="380" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Prior-fitted networks</text>
+
+    <text x="650" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Zero-Shot</text>
+    <text x="650" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">No training needed</text>
+
+    <text x="960" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Small Data</text>
+    <text x="960" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">&lt;10K rows ideal</text>
+
+    <text x="1260" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">High</text>
+    <text x="1260" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Transformer-based</text>
+
+    <circle cx="1640" cy="30" r="8" fill="#10B981"/>
+    <text x="1560" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Jan 2025</text>
+  </g>
+
+  <!-- Row 3: TabICL -->
+  <g transform="translate(100, 410)">
+    <rect x="0" y="0" width="1720" height="100" fill="#F8FAFC" stroke="#64748B" stroke-width="1" rx="8"/>
+    <text x="20" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" fill="#1E3A8A">TabICL</text>
+    <text x="20" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">ICML 2025</text>
+
+    <text x="380" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Foundation Model</text>
+    <text x="380" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">In-context learning</text>
+
+    <text x="650" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Zero-Shot / Few-Shot</text>
+    <text x="650" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Scalable architecture</text>
+
+    <text x="960" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Large Data</text>
+    <text x="960" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Up to 500K rows</text>
+
+    <text x="1260" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Moderate</text>
+    <text x="1260" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Black-box model</text>
+
+    <circle cx="1640" cy="30" r="8" fill="#10B981"/>
+    <text x="1560" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">2025</text>
+  </g>
+
+  <!-- Row 4: AutoGluon -->
+  <g transform="translate(100, 510)">
+    <rect x="0" y="0" width="1720" height="100" fill="#FFFFFF" stroke="#64748B" stroke-width="1" rx="8"/>
+    <text x="20" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" fill="#1E3A8A">AutoGluon</text>
+    <text x="20" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">AWS Platform</text>
+
+    <text x="380" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">AutoML</text>
+    <text x="380" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Ensemble platform</text>
+
+    <text x="650" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Automated Training</text>
+    <text x="650" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Time-budgeted</text>
+
+    <text x="960" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Very High</text>
+    <text x="960" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Millions of rows</text>
+
+    <text x="1260" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Low</text>
+    <text x="1260" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Complex ensembles</text>
+
+    <circle cx="1640" cy="30" r="8" fill="#10B981"/>
+    <text x="1560" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Mature</text>
+  </g>
+
+  <!-- Row 5: XGBoost -->
+  <g transform="translate(100, 610)">
+    <rect x="0" y="0" width="1720" height="100" fill="#F8FAFC" stroke="#64748B" stroke-width="1" rx="8"/>
+    <text x="20" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" fill="#1E3A8A">XGBoost</text>
+    <text x="20" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">Baseline</text>
+
+    <text x="380" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Gradient Boosting</text>
+    <text x="380" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Traditional ML</text>
+
+    <text x="650" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Manual Training + HPO</text>
+    <text x="650" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Minutes to hours</text>
+
+    <text x="960" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Very High</text>
+    <text x="960" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Industry standard</text>
+
+    <text x="1260" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">High</text>
+    <text x="1260" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Feature importance</text>
+
+    <circle cx="1640" cy="30" r="8" fill="#10B981"/>
+    <text x="1560" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">2016</text>
+  </g>
+
+  <!-- Row 6: CatBoost -->
+  <g transform="translate(100, 710)">
+    <rect x="0" y="0" width="1720" height="100" fill="#FFFFFF" stroke="#64748B" stroke-width="1" rx="8"/>
+    <text x="20" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" fill="#1E3A8A">CatBoost</text>
+    <text x="20" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">Baseline</text>
+
+    <text x="380" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Gradient Boosting</text>
+    <text x="380" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Traditional ML</text>
+
+    <text x="650" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Manual Training + HPO</text>
+    <text x="650" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Robust defaults</text>
+
+    <text x="960" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">High</text>
+    <text x="960" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Categorical optimized</text>
+
+    <text x="1260" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">High</text>
+    <text x="1260" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Feature importance</text>
+
+    <circle cx="1640" cy="30" r="8" fill="#10B981"/>
+    <text x="1560" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">2017</text>
+  </g>
+
+  <!-- Row 7: LightGBM -->
+  <g transform="translate(100, 810)">
+    <rect x="0" y="0" width="1720" height="100" fill="#F8FAFC" stroke="#64748B" stroke-width="1" rx="8"/>
+    <text x="20" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" fill="#1E3A8A">LightGBM</text>
+    <text x="20" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">Baseline</text>
+
+    <text x="380" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Gradient Boosting</text>
+    <text x="380" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Traditional ML</text>
+
+    <text x="650" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Manual Training + HPO</text>
+    <text x="650" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Fast training</text>
+
+    <text x="960" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Very High</text>
+    <text x="960" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Large dataset expert</text>
+
+    <text x="1260" y="38" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1E3A8A">Moderate</text>
+    <text x="1260" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">Leaf-wise growth</text>
+
+    <circle cx="1640" cy="30" r="8" fill="#10B981"/>
+    <text x="1560" y="65" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#64748B">2017</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(100, 940)">
+    <text x="0" y="20" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" fill="#1E3A8A">Legend:</text>
+    <rect x="80" y="6" width="200" height="22" fill="#14B8A6" fill-opacity="0.15" stroke="#14B8A6" stroke-width="2" rx="4"/>
+    <text x="190" y="22" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1E3A8A" text-anchor="middle">SAP RPT-1 (Primary Focus)</text>
+
+    <circle cx="340" cy="17" r="6" fill="#10B981"/>
+    <text x="360" y="22" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748B">Active/Maintained</text>
+  </g>
+
+  <!-- Bottom Note -->
+  <text x="960" y="1020" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#64748B" text-anchor="middle" font-style="italic">
+    Source: UW MSIM Team Analysis, Model Documentation, SAP RPT-1 Benchmarking Proposal 2025
+  </text>
+</svg>

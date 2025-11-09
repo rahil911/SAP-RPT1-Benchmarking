@@ -1,0 +1,85 @@
+# Dataset Configuration
+# =====================
+
+# TabArena Datasets (51 total)
+tabarena:
+  enabled: true
+  path: '../datasets/tabarena'
+  task_ids:
+    - 3
+    - 12
+    - 31
+    - 37
+    - 50
+    - 54
+    - 151
+    - 188
+    - 334
+    - 375
+    - 458
+    - 469
+    - 1036
+    - 1038
+    - 1040
+    - 1046
+    - 1049
+    - 1050
+    - 1053
+    - 1063
+    - 1067
+    - 1068
+    - 1120
+    - 1169
+    - 1461
+    - 1462
+    - 1464
+    - 1480
+    - 1485
+    - 1486
+    - 1487
+    - 1489
+    - 1494
+    - 1497
+    - 1501
+    - 1510
+    - 1570
+    - 4134
+    - 4135
+    - 4538
+    - 6566
+    - 9910
+    - 9946
+    - 9952
+    - 9957
+    - 9960
+    - 9964
+    - 9971
+    - 9976
+    - 9977
+    - 9978
+
+# TabZilla Datasets (subset of 20)
+tabzilla:
+  enabled: false  # Enable when data is available
+  path: '../datasets/tabzilla'
+
+# OpenML-CC18 (Classification subset)
+openml_cc18:
+  enabled: false
+  path: '../datasets/openml_cc18'
+
+# Dataset Filters
+filters:
+  min_samples: 100
+  max_samples: 100000
+  min_features: 2
+  max_features: 1000
+  task_types:
+    - classification
+    - regression
+
+# Preprocessing
+preprocessing:
+  handle_missing: 'mean'  # mean, median, most_frequent, drop
+  encode_categoricals: true
+  scale_features: false  # Most models handle scaling internally

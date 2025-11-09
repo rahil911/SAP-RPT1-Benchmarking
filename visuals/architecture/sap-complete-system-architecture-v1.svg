@@ -1,0 +1,279 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- Title -->
+  <text x="960" y="50" font-family="Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1E3A8A" text-anchor="middle">
+    SAP RPT-1 Benchmarking System Architecture
+  </text>
+  <text x="960" y="85" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#64748B" text-anchor="middle">
+    End-to-End Infrastructure for Publication-Quality Research
+  </text>
+
+  <!-- Layer 1: Data Sources -->
+  <g transform="translate(100, 130)">
+    <rect x="0" y="0" width="1720" height="150" fill="#FFFFFF" stroke="#14B8A6" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="1720" height="45" fill="#14B8A6" rx="10"/>
+    <text x="860" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      LAYER 1: DATA SOURCES
+    </text>
+
+    <!-- TabArena -->
+    <g transform="translate(50, 70)">
+      <rect x="0" y="0" width="280" height="60" fill="#64748B" rx="6"/>
+      <text x="140" y="25" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        TabArena Benchmark
+      </text>
+      <text x="140" y="45" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#F8FAFC" text-anchor="middle">
+        51 classification datasets
+      </text>
+    </g>
+
+    <!-- TabZilla -->
+    <g transform="translate(370, 70)">
+      <rect x="0" y="0" width="280" height="60" fill="#64748B" rx="6"/>
+      <text x="140" y="25" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        TabZilla Benchmark
+      </text>
+      <text x="140" y="45" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#F8FAFC" text-anchor="middle">
+        20 diverse datasets
+      </text>
+    </g>
+
+    <!-- OpenML -->
+    <g transform="translate(690, 70)">
+      <rect x="0" y="0" width="280" height="60" fill="#64748B" rx="6"/>
+      <text x="140" y="25" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        OpenML-CC18
+      </text>
+      <text x="140" y="45" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#F8FAFC" text-anchor="middle">
+        Optional additional datasets
+      </text>
+    </g>
+
+    <!-- Total -->
+    <g transform="translate(1010, 70)">
+      <rect x="0" y="0" width="660" height="60" fill="#14B8A6" rx="6"/>
+      <text x="330" y="25" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F2937" text-anchor="middle">
+        TOTAL: 71 Datasets, ~8 GB
+      </text>
+      <text x="330" y="45" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1F2937" text-anchor="middle">
+        Finance, Healthcare, Retail, Manufacturing, Government, Tech
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow Down -->
+  <g transform="translate(960, 290)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#14B8A6" stroke-width="4" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Layer 2: Preprocessing Pipeline -->
+  <g transform="translate(100, 340)">
+    <rect x="0" y="0" width="1720" height="130" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="1720" height="45" fill="#1E3A8A" rx="10"/>
+    <text x="860" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      LAYER 2: DATA PREPROCESSING PIPELINE
+    </text>
+
+    <g transform="translate(50, 70)">
+      <rect x="0" y="0" width="240" height="45" fill="#64748B" rx="6"/>
+      <text x="120" y="28" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">
+        Missing Value Handling
+      </text>
+    </g>
+
+    <g transform="translate(320, 70)">
+      <rect x="0" y="0" width="240" height="45" fill="#64748B" rx="6"/>
+      <text x="120" y="28" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">
+        Categorical Encoding
+      </text>
+    </g>
+
+    <g transform="translate(590, 70)">
+      <rect x="0" y="0" width="240" height="45" fill="#64748B" rx="6"/>
+      <text x="120" y="28" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">
+        Feature Normalization
+      </text>
+    </g>
+
+    <g transform="translate(860, 70)">
+      <rect x="0" y="0" width="240" height="45" fill="#64748B" rx="6"/>
+      <text x="120" y="28" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">
+        Train/Test Splitting
+      </text>
+    </g>
+
+    <g transform="translate(1130, 70)">
+      <rect x="0" y="0" width="240" height="45" fill="#64748B" rx="6"/>
+      <text x="120" y="28" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">
+        Stratified Sampling
+      </text>
+    </g>
+
+    <g transform="translate(1400, 70)">
+      <rect x="0" y="0" width="240" height="45" fill="#1E3A8A" rx="6"/>
+      <text x="120" y="28" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle" font-weight="bold">
+        Ready for Models
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow Down -->
+  <g transform="translate(960, 480)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#1E3A8A" stroke-width="4" marker-end="url(#arrowhead2)"/>
+  </g>
+
+  <!-- Layer 3: Model Execution Layer -->
+  <g transform="translate(100, 530)">
+    <rect x="0" y="0" width="1720" height="180" fill="#FFFFFF" stroke="#14B8A6" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="1720" height="45" fill="#14B8A6" rx="10"/>
+    <text x="860" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      LAYER 3: MODEL EXECUTION LAYER
+    </text>
+
+    <!-- Foundation Models -->
+    <g transform="translate(50, 65)">
+      <rect x="0" y="0" width="520" height="90" fill="#1E3A8A" rx="8"/>
+      <text x="260" y="25" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        Foundation Models (Zero/Few-Shot)
+      </text>
+      <text x="20" y="50" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#F8FAFC">
+        • SAP RPT-1 (sap-rpt-1-oss Docker)
+      </text>
+      <text x="20" y="70" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#F8FAFC">
+        • TabPFN v2.5 • TabICL
+      </text>
+    </g>
+
+    <!-- AutoML -->
+    <g transform="translate(600, 65)">
+      <rect x="0" y="0" width="520" height="90" fill="#64748B" rx="8"/>
+      <text x="260" y="25" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        AutoML Platform (Time-Budgeted)
+      </text>
+      <text x="20" y="50" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#F8FAFC">
+        • AutoGluon Tabular
+      </text>
+      <text x="20" y="70" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#F8FAFC">
+        • 4-hour time budget per dataset
+      </text>
+    </g>
+
+    <!-- Traditional ML -->
+    <g transform="translate(1150, 65)">
+      <rect x="0" y="0" width="520" height="90" fill="#64748B" rx="8"/>
+      <text x="260" y="25" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        Traditional ML (HPO)
+      </text>
+      <text x="20" y="50" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#F8FAFC">
+        • XGBoost • CatBoost • LightGBM
+      </text>
+      <text x="20" y="70" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#F8FAFC">
+        • Optuna/Bayesian optimization
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow Down -->
+  <g transform="translate(960, 720)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#14B8A6" stroke-width="4" marker-end="url(#arrowhead3)"/>
+  </g>
+
+  <!-- Layer 4: Evaluation & Analysis -->
+  <g transform="translate(100, 770)">
+    <rect x="0" y="0" width="1720" height="150" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="3" rx="10"/>
+    <rect x="0" y="0" width="1720" height="45" fill="#1E3A8A" rx="10"/>
+    <text x="860" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+      LAYER 4: EVALUATION & STATISTICAL ANALYSIS
+    </text>
+
+    <g transform="translate(50, 65)">
+      <rect x="0" y="0" width="340" height="60" fill="#64748B" rx="6"/>
+      <text x="170" y="23" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        Performance Metrics
+      </text>
+      <text x="170" y="43" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">
+        ROC-AUC, Accuracy, F1, Log Loss, R²
+      </text>
+    </g>
+
+    <g transform="translate(420, 65)">
+      <rect x="0" y="0" width="340" height="60" fill="#64748B" rx="6"/>
+      <text x="170" y="23" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        Efficiency Metrics
+      </text>
+      <text x="170" y="43" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">
+        Training Time, Inference Time, Memory
+      </text>
+    </g>
+
+    <g transform="translate(790, 65)">
+      <rect x="0" y="0" width="340" height="60" fill="#64748B" rx="6"/>
+      <text x="170" y="23" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        Statistical Tests
+      </text>
+      <text x="170" y="43" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">
+        Friedman, Nemenyi, Wilcoxon
+      </text>
+    </g>
+
+    <g transform="translate(1160, 65)">
+      <rect x="0" y="0" width="510" height="60" fill="#1E3A8A" rx="6"/>
+      <text x="255" y="23" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+        Critical Difference Diagrams
+      </text>
+      <text x="255" y="43" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">
+        Publication-quality visualizations
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow Down -->
+  <g transform="translate(960, 930)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#1E3A8A" stroke-width="4" marker-end="url(#arrowhead4)"/>
+  </g>
+
+  <!-- Layer 5: Outputs & Deliverables -->
+  <g transform="translate(100, 980)">
+    <rect x="0" y="0" width="1720" height="80" fill="#14B8A6" fill-opacity="0.9" rx="10"/>
+    <text x="860" y="30" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937" text-anchor="middle">
+      OUTPUTS: NeurIPS/ICML Paper + Results Dashboard + SAP Report
+    </text>
+    <text x="860" y="58" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1F2937" text-anchor="middle">
+      Publication-Quality Research • Competitive Intelligence • Use Case Guidance • Feature Roadmap Insights
+    </text>
+  </g>
+
+  <!-- Compute Infrastructure (Right Side) -->
+  <g transform="translate(50, 120)">
+    <rect x="0" y="0" width="40" height="880" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="3" rx="6"/>
+    <text x="20" y="440" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="bold" fill="#F59E0B" text-anchor="middle" transform="rotate(-90, 20, 440)">
+      COMPUTE: UW Tillicum H200 GPU (Primary) + AWS/Azure (Backup)
+    </text>
+  </g>
+
+  <!-- Reproducibility Framework (Left Side) -->
+  <g transform="translate(1830, 120)">
+    <rect x="0" y="0" width="40" height="880" fill="#10B981" fill-opacity="0.2" stroke="#10B981" stroke-width="3" rx="6"/>
+    <text x="20" y="440" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="bold" fill="#10B981" text-anchor="middle" transform="rotate(90, 20, 440)">
+      REPRODUCIBILITY: Docker + GitHub + Random Seeds + REFORMS Checklist
+    </text>
+  </g>
+
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#14B8A6"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#1E3A8A"/>
+    </marker>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#14B8A6"/>
+    </marker>
+    <marker id="arrowhead4" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#1E3A8A"/>
+    </marker>
+  </defs>
+</svg>
